@@ -1,0 +1,16 @@
+package com.yootk.demo;
+
+public class TestDemo {
+    public static void main(String[] args) {
+        System.out.println("1.除法计算开始");
+        try {
+            System.out.println("2.除法计算：" + (10 / 0));    //此处产生异常
+            // 异常产生之后的语句将不再执行，此处在try中产生异常。所以下面的语句不会再执行
+            System.out.println("王浩");
+        }catch (ArithmeticException e){
+            System.out.println("*******出现异常了*********");
+        }finally {
+            System.out.println("3.除法计算结束。");
+        }
+    }
+}
