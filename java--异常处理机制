@@ -1,5 +1,5 @@
 
-观察下面两个异常类的继承关系：
+# 观察下面两个异常类的继承关系：
 ArithmeticException:
     |--java.lang.Exception
         |--java.lang.RuntimeException
