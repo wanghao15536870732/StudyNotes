@@ -1,0 +1,59 @@
+```Android
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.lab.android.nuc.activitytest1">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        //注册第一个活动
+        <activity android:name=".FirstActivity">
+            android:label="按钮">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        //注册第二个活动
+        <activity android:name=".SecondActivity">
+            <intent-filter>
+                //下面一行代码指明了当前活动可以响应
+                //com.example.lab.android.nuc.activitytest1.ACTION_START这个action
+
+                <action android:name="com.example.lab.android.nuc.activitytest1.ACTION_START" />
+
+
+                //而category标签则包含了一些附加信息，更精准的指明了当前的活动能够响应的Intent中还可能带有category
+                //只有action标签和category标签中的内容同时能够匹配Intent中指定的action和category,这个活动才能响应该Intent
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+
+                //出现错误消息提示我们，没有一个活动可以响应我们的Intent，需要再添加一个category的声明
+
+                <category android:name="com.example.lab.android.nuc.activitytest1.MY_CATEGORY" />
+            </intent-filter>
+        </activity>
+        //注册第三个活动
+        <activity android:name=".ThirdActivity">
+            <intent-filter tools:ignore="AppLinkUrlError">
+                //配置了当前应用可以响应的action是Intent.ACTION_VIEW的常量值
+                <action android:name="android.intent.action.VIEW"/>
+
+                //而category则毫无疑问的指定了默认的category值
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
