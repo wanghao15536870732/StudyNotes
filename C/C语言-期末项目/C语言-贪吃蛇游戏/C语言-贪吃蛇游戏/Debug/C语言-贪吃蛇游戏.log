@@ -1,0 +1,41 @@
+﻿生成启动时间为 2018/9/9 20:58:04。
+     1>项目“D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\C语言-贪吃蛇游戏\C语言-贪吃蛇游戏.vcxproj”在节点 2 上(build 个目标)。
+     1>PrepareForBuild:
+         正在创建目录“D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\Debug\”。
+       InitializeBuildStatus:
+         正在创建“Debug\C语言-贪吃蛇游戏.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "贪吃蛇.cpp"
+         贪吃蛇.cpp
+     1>d:\documents\visual studio 2010\projects\c语言-贪吃蛇游戏\c语言-贪吃蛇游戏\贪吃蛇.cpp(93): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(544) : 参见“_swprintf”的声明
+     1>d:\documents\visual studio 2010\projects\c语言-贪吃蛇游戏\c语言-贪吃蛇游戏\贪吃蛇.cpp(135): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(130) : 参见“kbhit”的声明
+     1>d:\documents\visual studio 2010\projects\c语言-贪吃蛇游戏\c语言-贪吃蛇游戏\贪吃蛇.cpp(205): warning C4996: '_swprintf': This function or variable may be unsafe. Consider using _swprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(544) : 参见“_swprintf”的声明
+     1>d:\documents\visual studio 2010\projects\c语言-贪吃蛇游戏\c语言-贪吃蛇游戏\贪吃蛇.cpp(365): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(130) : 参见“kbhit”的声明
+     1>d:\documents\visual studio 2010\projects\c语言-贪吃蛇游戏\c语言-贪吃蛇游戏\贪吃蛇.cpp(416): warning C4996: 'kbhit': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _kbhit. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(130) : 参见“kbhit”的声明
+     1>d:\documents\visual studio 2010\projects\c语言-贪吃蛇游戏\c语言-贪吃蛇游戏\贪吃蛇.cpp(452): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128) : 参见“getch”的声明
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\C语言-贪吃蛇游戏.exe.embed.manifest.res" "Debug\C语言-贪吃蛇游戏_manifest.rc" 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\Debug\C语言-贪吃蛇游戏.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\C语言-贪吃蛇游戏.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\Debug\C语言-贪吃蛇游戏.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\Debug\C语言-贪吃蛇游戏.lib" /MACHINE:X86 "Debug\C语言-贪吃蛇游戏.exe.embed.manifest.res"
+         "Debug\贪吃蛇.obj"
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\C语言-贪吃蛇游戏.exe.embed.manifest" /manifest "Debug\C语言-贪吃蛇游戏.exe.intermediate.manifest"
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\C语言-贪吃蛇游戏.exe.embed.manifest.res" "Debug\C语言-贪吃蛇游戏_manifest.rc" 
+       LinkEmbedManifest:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\Debug\C语言-贪吃蛇游戏.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\C语言-贪吃蛇游戏.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\Debug\C语言-贪吃蛇游戏.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\Debug\C语言-贪吃蛇游戏.lib" /MACHINE:X86 "Debug\C语言-贪吃蛇游戏.exe.embed.manifest.res"
+         "Debug\贪吃蛇.obj"
+         C语言-贪吃蛇游戏.vcxproj -> D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\Debug\C语言-贪吃蛇游戏.exe
+       FinalizeBuildStatus:
+         正在删除文件“Debug\C语言-贪吃蛇游戏.unsuccessfulbuild”。
+         正在对“Debug\C语言-贪吃蛇游戏.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“D:\Documents\Visual Studio 2010\Projects\C语言-贪吃蛇游戏\C语言-贪吃蛇游戏\C语言-贪吃蛇游戏.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:09.61
