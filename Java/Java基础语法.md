@@ -1,5 +1,31 @@
 # Java基础语法
 
++ [`Java 的注释`](#Java的注释)
+  + [`单行注释`](#单行注释)
+  + [`多行注释`](#多行注释)
+  + [`使用文档注释`](#使用文档注释)
+  + [`利用中文定义标识符`](#利用中文定义标识符)
++ [`数据类型划分`](#数据类型划分)
+  + [`定义 int 型变量`](#定义int型变量)
+  + [`观察变量与常量的区别`](#观察变量与常量的区别)
+  + [`如果超过了int 的最大值或最小值的结果`](#如果超过了int的最大值或最小值的结果)
+  + [`扩大数据类型`](#扩大数据类型)
+  + [`将范围大的数据类型变为范围小的数据类型`](#将范围大的数据类型变为范围小的数据类型)
+  + [`发生溢出的转换问题`](#观察发生溢出的转换问题)
+  + [`byte 的转换`](#观察byte转换)
++ [`运算符`](#运算符)
+  + [`不建议使用的代码`](#不建议使用的代码)
+  + [`使用关系运算符`](#使用关系运算符)
+  + [`观察自增`](#观察自增)
+  + [`利用判断语句实现三目运算的功能`](#利用判断语句实现三目运算的功能)
++ [`方法的定义及使用`](#方法的定义及使用)
+  + [`定义一个没有参数没有返回值的方法`](#定义一个没有参数没有返回值的方法)
+  + [`定义一个有参数无返回值的方法`](#定义一个有参数无返回值的方法)
+  + [`定义有返回值有参数的方法`](#定义有返回值有参数的方法)
+  + [`方法重载`](#方法重载)
+  + [`递归调用`](#递归调用)
+
+
 ## Java的注释
 
 ### 单行注释
@@ -44,12 +70,15 @@ public class TestDemo {
 ### 利用中文定义标识符
 
 ```java
-public class 你好 {					// 类名称
+public class 你好 { // 类名称
     public static void main(String args[]) {
         int 年龄 = 20 ;	 			// 变量名称
-        System.out.println(年龄) ;		// 输出内容
+        System.out.println(年龄) ; // 输出内容
     }
 }
+/*
+20
+*/
 ```
 
 ## 数据类型划分
@@ -65,6 +94,9 @@ public class TestDemo {
         System.out.println(result) ; // 输出result变量
     }
 }
+/*
+20
+*/
 ```
 
 ### 观察变量与常量的区别
@@ -79,6 +111,9 @@ public class TestDemo {
         System.out.println(num) ;
     }
 }
+/*
+20
+*/
 ```
 
 ### 如果超过了int的最大值或最小值的结果
@@ -124,6 +159,9 @@ public class TestDemo {
         System.out.println(x) ; //
     }
 }
+/*
+1000
+*/
 ```
 
 ### 观察发生溢出的转换问题
@@ -136,6 +174,9 @@ public class TestDemo {
         System.out.println(x) ;
     }
 }
+/*
+-2147483646
+*/
 ```
 
 ### 观察byte转换
@@ -148,6 +189,9 @@ public class TestDemo {
         System.out.println(x) ;
     }
 }
+/*
+-126
+*/
 ```
 
 ## 运算符
@@ -164,6 +208,9 @@ public class TestDemo {
         System.out.println(result) ;
     }
 }
+/*
+-143 这咋算出来的  哈哈
+*/
 ```
 
 ### 使用关系运算符
@@ -195,6 +242,10 @@ public class TestDemo {
         System.out.println("result = " + result);
     }
 }
+/*
+numA = 11
+result = 31
+*/
 ```
 
 ### 利用判断语句实现三目运算的功能
@@ -214,6 +265,9 @@ public class TestDemo {
         System.out.println(max);
     }
 }
+/*
+20
+*/
 ```
 
 ## 方法的定义及使用
@@ -235,6 +289,11 @@ public class TestDemo {
         System.out.println("*********************");
     }
 }
+/*
+*********************
+*   www.baidu.com   *
+*********************
+*/
 ```
 
 ### 定义一个有参数无返回值的方法
@@ -257,6 +316,10 @@ public class TestDemo {
         }
     }
 }
+/*
+可以进行支付！
+你穷疯了，没钱还买东西！
+*/
 ```
 
 ### 定义有返回值有参数的方法
@@ -266,7 +329,7 @@ public class TestDemo {
     public static void main(String args[]) {
         int result = add(10, 20); // 方法的返回值可以进行接收
         System.out.println("计算结果：" + result);
-        System.out.println("计算结果：" + add(50, 60));	// 也可以直接将方法返回值进行输出
+        System.out.println("计算结果：" + add(50, 60)); // 也可以直接将方法返回值进行输出
     }
     /**
      * 实现数据的加法操作
@@ -278,6 +341,10 @@ public class TestDemo {
         return x + y; // 返回加法计算结果
     }
 }
+/*
+计算结果：30
+计算结果：110
+*/
 ```
 
 ### 方法重载
@@ -319,6 +386,11 @@ public class TestDemo {
         return x + y;
     }
 }
+/*
+两个整型参数：30
+三个整型参数：60
+两个浮点型参数：30.5
+*/
 ```
 
 ### 递归调用
@@ -340,4 +412,7 @@ public class TestDemo {
         return num + sum(num - 1); // 递归调用
     }
 }
+/*
+5050
+*/
 ```
