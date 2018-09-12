@@ -1,12 +1,12 @@
 # Java IO编程
 
-+ [`文件操作类 File`](#文件操作类：File)
++ [`文件操作类 File`](#文件操作类:File)
   + [`文件基本操作`](#文件基本操作)
   + [`创建带路径的文件`](#创建带路径的文件)
   + [`取得文件或目录的信息`](#取得文件或目录的信息)
   + [`列出文件目录信息`](#列出目录信息)
 + [`字节流与字符流`](#字节流与字符流)
-  + [`自动执行 close() 操作`](#自动执行close()操作)
+  + [`自动执行 close() 操作`](#自动执行close操作)
   + [`文件内容的输出`](#文件内容的输出)
   + [`采用单个字节的方式输出`](#采用单个字节的方式输出)
   + [`输出部分字节数组内容`](#输出部分字节数组内容)
@@ -15,21 +15,21 @@
   + [`强制清空字符流缓冲区`](#强制清空字符流缓冲区)
 + [`转换流`](#转换流)
   + [`实现输出流转换`](#实现输出流转换)
-+ [`System 类对 IO 的支持`](#System类对IO的支持)
++ [`System 类对IO的支持`](#System类对IO的支持)
   + [`错误输出`](#错误输出)
-  + [`利用 OutputStream 实现屏幕输出`](#利用OutputStream实现屏幕输出)
+  + [`利用OutputStream实现屏幕输出`](#利用OutputStream实现屏幕输出)
   + [`实现键盘的数据输入`](#实现键盘的数据输入)
-+ [`字符缓冲流 BufferedReader`](#字符缓冲流：BufferedReader)
++ [`字符缓冲流BufferedReader`](#字符缓冲流：BufferedReader)
   + [`键盘数据输入的标准格式`](#键盘数据输入的标准格式)
   + [`读取文件`](#读取文件)
-+ [`扫描流：Scanner`](#扫描流：Scanner)
-  + [`利用 Scanner 实现键盘数据输入`](#利用Scanner实现键盘数据输入)
++ [`扫描流:Scanner`](#扫描流:Scanner)
+  + [`利用Scanner实现键盘数据输入`](#利用Scanner实现键盘数据输入)
 + [`对象序列化`](#对象序列化)
   + [`定义一个可以被序列化对象的类`](#定义一个可以被序列化对象的类)
-  + [`实现序列化对象操作 —— ObjectOutputStream`](#实现序列化对象操作——ObjectOutputStream)
-  + [`实现反序列化操作 —— ObjectInputStream`](#实现反序列化操作——ObjectInputStream)
+  + [`实现序列化对象操作  ObjectOutputStream`](#实现序列化对象操作——ObjectOutputStream)
+  + [`实现反序列化操作  ObjectInputStream`](#实现反序列化操作——ObjectInputStream)
 
-## 文件操作类：File
+## 文件操作类:File
 
 ### 文件基本操作
 
@@ -117,7 +117,7 @@ public class TestDemo {
 
 ## 字节流与字符流
 
-### 自动执行close()操作
+### 自动执行close操作
 
 ```java
 class Net implements AutoCloseable {
@@ -356,7 +356,7 @@ public class TestDemo {
 }
 ```
 
-## 扫描流：Scanner
+## 扫描流:Scanner
 
 ### 利用Scanner实现键盘数据输入
 
