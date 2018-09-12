@@ -45,6 +45,7 @@
 + [高级字符串奇偶位比较](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%AB%98%E7%BA%A7%E5%AD%97%E7%AC%A6%E4%B8%B2.cpp)
 + [高级计算器](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E5%99%A8.cpp)
 ## C语言进阶
++ [一个输入输出的实践](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/arithmetic.md)
 + [名字首字母大写](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99.cpp)
 + [星行菱形](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E8%8F%B1%E5%BD%A2.cpp)
 + [矩阵对角线求和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E7%9F%A9%E9%98%B5%E5%AF%B9%E8%A7%92%E7%BA%BF%E6%B1%82%E5%92%8C.cpp)
@@ -98,3 +99,5 @@
 + [电话号码和 E-mail 地址提取程序](https://github.com/wanghao15536870732/StudyNotes/blob/master/python/Python%E7%BC%96%E7%A8%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C).md)
 ## Python进阶
 + [Python快速上手源代码](https://github.com/wanghao15536870732/StudyNotes/tree/master/python/Python%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E6%BA%90%E4%BB%A3%E7%A0%81)
+
+之前的笔记太乱了,现在正在恶补当中... 
