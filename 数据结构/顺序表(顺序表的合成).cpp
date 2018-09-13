@@ -1,3 +1,13 @@
+/*
+有顺序表A和B，其元素均按从小到大的升序排列，编写一个算法，将它们合并成一个顺序表C，
+要求C的元素也按从小到大的升序排列。
+*/ 
+
+
+
+
+
+
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
@@ -250,16 +260,20 @@ void sort_insert2(sequence_list *slt1,sequence_list *slt2)
 	int i = 0,j = 0;
 	while(i < slt1->size)
 	{
+		//如果顺序表slt1的数据比slt2最大的都大，直接将slt1的数据加到slt2后面 
 		if(slt1->score[i] > slt2->score[slt2->size - 1])
 		{
 			append(slt2,slt1->a[i],slt1->name[i],slt1->score[i]);
 			i ++;
-		}else if(slt1->score[i] < slt2->score[j])
+		}else if(slt1->score[i] < slt2->score[j])  //如果序表slt1的数据比slt2位置j上的的要小 
 		{
-			insert(slt2,slt1->a[i],j,slt1->name[i],slt1->score[i]); // 
+			// 将slt1的数据插入到slt2的 j 的位置 
+			insert(slt2,slt1->a[i],j,slt1->name[i],slt1->score[i]); 
+			//两个顺序表都向后扫描 
 			i ++;
 			j ++;
 		}else
+			//向后扫描slt2 
 			j ++;
 	}
 }

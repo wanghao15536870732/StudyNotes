@@ -1,3 +1,9 @@
+/*
+将顺序表(a1,a2,…,an)重新排列以a1为界的两部分：a1前面的值均比a1小，
+a1后面的值均比a1大（这里假设数据元素的类型具有可比性，不妨设为整型）。
+这里我自己定义的数据结构的课程分数 
+*/ 
+
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
@@ -6,7 +12,7 @@
 /* 顺序表的头文件,文件名：数据结构.cpp */
 /***************************************/
 
-#define MAXSIZE 1000
+#define MAXSIZE 100
 typedef int datatype;
 typedef struct{
 	datatype a[MAXSIZE];  //学号
@@ -32,14 +38,7 @@ datatype get(sequence_list slt,int i);
 void insert(sequence_list *slt,datatype x,int position,char *name,int score);
 //删除顺序表的 position 位置的节点
 void dele(sequence_list *slt,int position);
-//顺序表成绩排序
-void sort(sequence_list *slt);
-//交换节点
-void exchange(sequence_list *slt,int position1,int position2);
-//交换int类型的数据
-void exchange_num(datatype *x,int *y);
-//交换字符串的数据
-void exchange_string(char a[],char b[]);
+
 //将a1作为界限进行划分
 void compare(sequence_list *slt);
 
@@ -61,9 +60,6 @@ int main()
 	//以a1为分界线划分数据
 	compare(&Stu);
 	//再次展示顺序表的数据
-	display(Stu);
-
-	sort(&Stu);
 	display(Stu);
 	return 0;
 }
@@ -224,50 +220,3 @@ void compare(sequence_list *slt)
 	}
 }
 
-/************************************/
-/* 函数功能：将顺序表按成绩重新排列 */        
-/************************************/
-void sort(sequence_list *slt)
-{
-	if(!slt->size)
-		printf("\n顺序表是空的！\n");
-	else
-	{
-		for(int i = 1;i <= slt->size - 1;i ++)
-		{
-			for(int j = 1;j <= slt->size - i;j ++)
-			{
-				if(slt->score[j - 1] > slt->score[j])
-				{
-					exchange_num(&slt->a[j - 1],&slt->a[j]);
-					exchange_string(slt->name[j - 1],slt->name[j]);
-					exchange_num(&slt->score[j - 1],&slt->score[j]);
-				}
-			}
-		}
-	}
-}
-
-void exchange(sequence_list *slt,int position1,int position2)
-{
-	exchange_num(&slt->a[position1],&slt->a[position2]);
-	exchange_string(slt->name[position1],slt->name[position2]);
-	exchange_num(&slt->score[position1],&slt->score[position2]);
-}
-
-//交换int类型的数据
-void exchange_num(datatype *x,int *y) 
-{
-	int t = *x;
-	*x = *y;
-	*y = t;
-}
-
-//交换字符串的数据
-void exchange_string(char a[],char b[])
-{
-	char t[20];
-	strcpy(t,a);
-	strcpy(a,b);
-	strcpy(b,t);
-}
