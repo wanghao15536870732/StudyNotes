@@ -111,7 +111,7 @@
 
 ### Android 开发艺术探索
 
-+ []
++ [第一章 Activity的生命周期和启动模式](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/Android%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2/%E7%AC%AC%E4%B8%80%E7%AB%A0.md)
 
 ## Python初级
 
@@ -123,7 +123,7 @@
 
 + [Python快速上手源代码](https://github.com/wanghao15536870732/StudyNotes/tree/master/python/Python%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E6%BA%90%E4%BB%A3%E7%A0%81)
 
-## 数据结构]
+## 数据结构
 
 + [顺序表 -- 两个顺序表的合成](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A1%BA%E5%BA%8F%E8%A1%A8%20--%20%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%90%88%E6%88%90.cpp)
 + [顺序表 -- 以a1为界限划分](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A1%BA%E5%BA%8F%E8%A1%A8%20--%20%E4%BB%A5a1%E4%B8%BA%E7%95%8C%E9%99%90%E5%88%92%E5%88%86.cpp)
