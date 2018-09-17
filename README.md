@@ -1,7 +1,7 @@
 # 开发路上的学习笔记
 
-
 ## C语言初级
+
 + [一些算法题](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/c_note_1.md)
 + [函数不大于](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E4%B8%8D%E5%A4%A7%E4%BA%8E.cpp)
 + [主对角线之和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E4%B8%BB%E5%AF%B9%E8%A7%92%E7%BA%BF%E5%85%83%E7%B4%A0%E4%B9%8B%E5%92%8C.cpp)
@@ -44,7 +44,9 @@
 + [计算阶乘之和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%98%B6%E4%B9%98%E4%B9%8B%E5%92%8C.cpp)
 + [高级字符串奇偶位比较](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%AB%98%E7%BA%A7%E5%AD%97%E7%AC%A6%E4%B8%B2.cpp)
 + [高级计算器](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E5%99%A8.cpp)
+
 ## C语言进阶
+
 + [一个输入输出的实践](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/arithmetic.md)
 + [名字首字母大写](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99.cpp)
 + [星行菱形](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E8%8F%B1%E5%BD%A2.cpp)
@@ -57,10 +59,14 @@
 + [后移0](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E5%90%8E%E7%A7%BB0.cpp)
 + [三天打鱼七天筛网](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E4%B8%89%E5%A4%A9%E6%89%93%E9%B1%BC%E4%B8%83%E5%A4%A9%E7%AD%9B%E7%BD%91.cpp)
 + [八皇后问题](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98.cpp)
+
 ## C语言大一期末项目
+
 + [2018游戏](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E6%9C%9F%E6%9C%AB%E9%A1%B9%E7%9B%AE/C%E8%AF%AD%E8%A8%80-2048%E6%B8%B8%E6%88%8F/2048%E6%B8%B8%E6%88%8F/2048.cpp)
 + [贪吃蛇游戏](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E6%9C%9F%E6%9C%AB%E9%A1%B9%E7%9B%AE/C%E8%AF%AD%E8%A8%80-%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/C%E8%AF%AD%E8%A8%80-%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/%E8%B4%AA%E5%90%83%E8%9B%87.cpp)
+
 ## Java初级
+
 + [Java简介](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/Java%E7%AE%80%E4%BB%8B.md)
 + [Java基础语法](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/Java%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95.md)
 + [Java数据类型与运算符](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/Java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E4%B8%8E%E8%BF%90%E7%AE%97%E7%AC%A6.md)
@@ -69,7 +75,9 @@
 + [面向对象基础知识(二) String 类的基本概念跟常用方法](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86(%E4%BA%8C).md)
 + [面向对象基础知识(三) this关键字、引用传递](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86(%E4%B8%89).md)
 + [面向对象基础知识(四) static 关键字、代码块和内部类](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86(%E5%9B%9B).md)
+
 ## Java进阶
+
 + [接口的应用 -- 代理模式](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%BA%94%E7%94%A8%20--%20%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md)
 + [接口的应用 -- 工厂模式](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%BA%94%E7%94%A8%20--%20%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F.md)
 + [异常处理机制](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6.md)
@@ -78,8 +86,15 @@
 + [Java IO 编程 文件操作类 File、字节流与字符流](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/Java%20IO%20%E7%BC%96%E7%A8%8B.md)
 + [面向对象进阶知识(一) 继承性、方法覆写和多态性](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86(%E4%B8%80).md)
 + [面向对象进阶知识(二) 抽象类、接口、基本数据类型包装类](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86(%E4%BA%8C).md)
+
 ## Android
+
+### Android 第一行代码
+
 + [解决RecyclerView遮住Toolber的问题](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_first_line/android-first-line.md)
+
+### Android 编程权威指南
+
 + [Android编程权威指南 (第2版) --第12章 对话框 挑战练习](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_guide/android-note-1.md)
 + [Android编程权威指南（第2版）--第13章 工具栏 挑战练习](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_guide/android-note-2.md)
 + [Android编程权威指南（第2版）--第14章 SQLite数据库 挑战练习](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_guide/android-note-3.md)
@@ -93,11 +108,25 @@
 + [Android编程权威指南（第2版）学习笔记 --第28章 网页浏览](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_guide/android-note-11.md)
 + [Android编程权威指南（第2版）学习笔记 --第29章 定制视图与触摸时间 挑战练习](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_guide/android-note-12.md)
 + [Android编程权威指南（第2版）学习笔记 --第30章 属性动画篇 挑战练习 还未完成](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_guide/android-note-13.md)
+
+### Android 开发艺术探索
+
++ []
+
 ## Python初级
+
 + [用正则表达式查找文本模式](https://github.com/wanghao15536870732/StudyNotes/blob/master/python/Python%E7%BC%96%E7%A8%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80).md)
 + [从Web抓取信息](https://github.com/wanghao15536870732/StudyNotes/blob/master/python/Python%E7%BC%96%E7%A8%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%89).md)
 + [电话号码和 E-mail 地址提取程序](https://github.com/wanghao15536870732/StudyNotes/blob/master/python/Python%E7%BC%96%E7%A8%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%BA%8C).md)
+
 ## Python进阶
+
 + [Python快速上手源代码](https://github.com/wanghao15536870732/StudyNotes/tree/master/python/Python%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E6%BA%90%E4%BB%A3%E7%A0%81)
 
-之前的笔记太乱了,现在正在恶补当中... 
+## 数据结构]
+
++ [顺序表 -- 两个顺序表的合成](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A1%BA%E5%BA%8F%E8%A1%A8%20--%20%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%90%88%E6%88%90.cpp)
++ [顺序表 -- 以a1为界限划分](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A1%BA%E5%BA%8F%E8%A1%A8%20--%20%E4%BB%A5a1%E4%B8%BA%E7%95%8C%E9%99%90%E5%88%92%E5%88%86.cpp)
++ [栈的应用 -- 括号匹配](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8%20--%20%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D.cpp)
+
+之前的笔记太乱了,现在正在恶补当中...
