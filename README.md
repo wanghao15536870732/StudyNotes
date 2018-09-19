@@ -128,5 +128,7 @@
 + [顺序表 -- 两个顺序表的合成](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A1%BA%E5%BA%8F%E8%A1%A8%20--%20%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%90%88%E6%88%90.cpp)
 + [顺序表 -- 以a1为界限划分](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A1%BA%E5%BA%8F%E8%A1%A8%20--%20%E4%BB%A5a1%E4%B8%BA%E7%95%8C%E9%99%90%E5%88%92%E5%88%86.cpp)
 + [栈的应用 -- 括号匹配](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8%20--%20%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D.cpp)
++ [队列](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97.cpp)
++ [中缀表达式转换后缀表达式](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F.cpp)
 
 之前的笔记太乱了,现在正在恶补当中...
