@@ -1,3 +1,5 @@
+# 抽象链表
+
 ```java
 abstract class A1{       //定义抽象类
     public abstract void println();
@@ -11,7 +13,8 @@ abstract class A1{       //定义抽象类
     }
 }
 ```
-/**/
+
+```java
 abstract class A2{    //定义抽象类
     public A2(){                        //2.父类构造方法
         this.print2();                  //3.调用print2()方法
@@ -143,3 +146,4 @@ public class Testclass {
         act.command(Action.WORK);  //调用工作的操作
     }
 }
+```

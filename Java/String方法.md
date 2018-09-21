@@ -1,7 +1,6 @@
+# String类的基本概念：
 
- 
-看图请戳--->>>http://img.mukewang.com/53d9f7d200010bb007780366.jpg
-String类的基本概念：
+```java
 public class StringDemo{
     public static void main(String[] args) {
         String str = new String("www.Test.com");
@@ -39,34 +38,47 @@ public class StringDemo{
         System.out.println(strd2 == stre2);    //结果为true
     }
 }
-String的部分方法：
-char c = str.charAt(0); //截取第一个字符
-System.out.println(c);
-char []date = str.toCharArray();                //将字符串变为字符数组
-for (int i = 0; i < date.length; i++) {
-    System.out.print(date[i] + "->");           //  h->e->l->l->o->
-}
-System.out.println();
-for (int i = 0; i < date.length; i++) {
-    date[i] -= 32;
-}
-System.out.println(new String(date));                   //将全部字符数组变为String HELLO
-System.out.println(new String(date,1,2));  //将部分字符数组变为String  EL
+```
 
-byte[]date1 = str.getBytes();                           //将字符串变为字节数组
-for (int i = 0; i < date1.length; i++) {
-    date1[i] -= 32;
-}
-System.out.println(new String(date1));                  //HELLO
-System.out.println(new String(date1,2,2));//LL
++ String的部分方法:
+
+```java
+    char c = str.charAt(0); //截取第一个字符
+    System.out.println(c);
+```
+
+```java
+    char []date = str.toCharArray();                //将字符串变为字符数组
+    for (int i = 0; i < date.length; i++) {
+        System.out.print(date[i] + "->");           //  h->e->l->l->o->
+    }
+    System.out.println();
+    for (int i = 0; i < date.length; i++) {
+        date[i] -= 32;
+    }
+    System.out.println(new String(date));                   //将全部字符数组变为String HELLO
+    System.out.println(new String(date,1,2));  //将部分字符数组变为String
+
+```
+
+``` java
+
+    byte[]date1 = str.getBytes();                           //将字符串变为字节数组
+    for (int i = 0; i < date1.length; i++) {
+        date1[i] -= 32;
+    }
+    System.out.println(new String(date1));                  //HELLO
+    System.out.println(new String(date1,2,2));//LL
 
 //字符串的比较
 
- String strf = "Hello";
-System.out.println(str.equals(strf));           //false 区分大小写
-System.out.println(str.equalsIgnoreCase(strf));  //true 不区分大小写
-System.out.println(str.compareTo(strf));        //  32  比较的是两字符串的编码差值
+    String strf = "Hello";
+    System.out.println(str.equals(strf));           //false 区分大小写
+    System.out.println(str.equalsIgnoreCase(strf));  //true 不区分大小写
+    System.out.println(str.compareTo(strf));        //  32  比较的是两字符串的编码差值
 
-//字符串的查找
-System.out.println(str.indexOf("e")); // 1  返回的是满足条件单词的第一个字母的索引
-System.out.println(str.lastIndexOf("e"));// 3
+    //字符串的查找
+    System.out.println(str.indexOf("e")); // 1  返回的是满足条件单词的第一个字母的索引
+    System.out.println(str.lastIndexOf("e"));// 3
+
+```
