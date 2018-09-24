@@ -21,7 +21,7 @@ public class ShellSort {
                 for (int j = i + length2; j < str.length; j += length2) {
                     int k = j - length2;
                     temp = str[j];
-                    for (;j >= 0 && temp < str[j];j -= length2){
+                    for (;k >= 0 && temp < str[k];k -= length2){
                         str[k + length2] = str[k];
                     }
                     str[k + length2] = temp;
@@ -38,7 +38,7 @@ public class ShellSort {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入一个数组：");
         String s1 = scanner.nextLine();
-        String[] s2 = s1.split(",");
+        String[] s2 = s1.split(" ");
         int[] str = new int[s2.length];
         for (int i = 0; i < str.length; i++) {
             str[i] = Integer.valueOf(s2[i]);

@@ -2,6 +2,10 @@ package Sort;
 
 import java.util.Scanner;
 
+/*
+二分插入排序
+原理：将数组分为两部分开始进行插入排序
+ */
 public class BinaryInsertSort {
 
     public void binaryInsertSort(int[] str){
