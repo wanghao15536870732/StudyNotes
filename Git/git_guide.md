@@ -17,7 +17,7 @@ $ git clone [url]
 
 ## 二、配置
 
-```python
+```git
 # 显示当前的Git配置
 $ git config --list
 
@@ -31,7 +31,7 @@ $ git config [--global] user.email "[email address]"
 
 ## 三、增加/删除文件
 
-```python
+```git
 # 添加指定文件到暂存区
 $ git add [file1] [file2] ...
 
@@ -57,7 +57,7 @@ $ git mv [file-original] [file-renamed]
 
 ## 四、代码提交
 
-```python
+```git
 # 提交暂存区到仓库区
 $ git commit -m [message]
 
@@ -80,7 +80,7 @@ $ git commit --amend [file1] [file2] ...
 
 ## 五、分支
 
-```python
+```git
 # 列出所有本地分支
 $ git branch
 
@@ -127,7 +127,7 @@ $ git branch -dr [remote/branch]
 
 ## 六、查看信息
 
-```python
+```git
 # 显示有变更的文件
 $ git status
 
@@ -192,7 +192,7 @@ $ git reflog
 
 七、远程同步
 
-```python
+```git
 # 下载远程仓库的所有变动
 $ git fetch [remote]
 
@@ -220,7 +220,7 @@ $ git push [remote] --all
 
 八、撤销
 
-```python
+```git
 # 恢复暂存区的指定文件到工作区
 $ git checkout [file]
 
@@ -260,14 +260,14 @@ $ git stash pop
 + 假如现在我的项目上有develop、master、xiaoming、wanghao四个分支
 + 现在使用git branch 会显示只有一个master分支
 
-```python
+```git
 $ git branch
 * master
 ```
 
 + 现在要将你的分支跟develop分支拉到你的本地
 
-```python
+```git
 # 拉自己的分支
 git fetch origin wanghao:wanghao
 
@@ -281,7 +281,7 @@ git branch --set-upstream-to=origin/develop develop
 
 + 然后再次执行git branch 就会发现有三个分支了
 
-```python
+```git
 $ git branch
 * master
 develop
@@ -290,7 +290,7 @@ wanghao
 
 + 接着切换到自己的分支
 
-```python
+```git
 $ git checkout wanghao
 * wanghao
 master
@@ -299,13 +299,13 @@ develop
 
 + 将 develop 分支上的东西拉到本地
 
-```python
+```git
 $ git pull origin develop
 ```
 
 + 提交到自己的Github仓库
 
-```python
+```git
 $ git push origin wanghao
 ```
 
@@ -313,7 +313,7 @@ $ git push origin wanghao
 
 + 首先将你自己所写的代码上传到你的分支，即
 
-```python
+```git
 $ git add .
 $ git commit -m "first commit ."
 $ git push origin wanghao  <- 这里换成你分支的名字 
@@ -321,19 +321,19 @@ $ git push origin wanghao  <- 这里换成你分支的名字
 
 + 再切换到 develop 分支上
 
-```python
+```git
 $ git checkout develop
 ```
 
 + 将自己分支与dev分支合并
 
-```python
+```git
 $ git merge wanghao
 ```
 
 + 与线上dev分支同步（拉取线上dev分支）
 
-```python
+```git
 $ git pull origin develop
 ```
 
@@ -341,7 +341,7 @@ $ git pull origin develop
 
 + 当你执行完上面的操作后，会发现本地多了好多莫名其妙的东西:
 
-```python
+```git
 <<<<<<< HEAD  # 当前更改
 Creating a new branch is quick & simple.
 =======
@@ -353,7 +353,7 @@ Creating a new branch is quick AND simple.
 
 + 处理好这些冲突之后，就可以提交到develop分支上了
 
-```python
+```git
 $ git add .
 $ git commit -m "merge wanghao to develop."
 $ git push origin defvelop
@@ -361,7 +361,7 @@ $ git push origin defvelop
 
 + 最后切换回你的分支上继续开发
 
-```python
+```git
 $ git checkout wanghao
 ```
 

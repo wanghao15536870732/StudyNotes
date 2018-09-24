@@ -65,6 +65,15 @@
 + [2018游戏](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E6%9C%9F%E6%9C%AB%E9%A1%B9%E7%9B%AE/C%E8%AF%AD%E8%A8%80-2048%E6%B8%B8%E6%88%8F/2048%E6%B8%B8%E6%88%8F/2048.cpp)
 + [贪吃蛇游戏](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E6%9C%9F%E6%9C%AB%E9%A1%B9%E7%9B%AE/C%E8%AF%AD%E8%A8%80-%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/C%E8%AF%AD%E8%A8%80-%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/%E8%B4%AA%E5%90%83%E8%9B%87.cpp)
 
+## C ++
+
++ [iostream](https://github.com/wanghao15536870732/StudyNotes/blob/master/C%2B%2B/ioStream.cpp)
+
+## Git
+
++ [git 常用命令](https://github.com/wanghao15536870732/StudyNotes/blob/master/Git/git_guide.md)
++ [git commit 添加emoji](https://github.com/wanghao15536870732/StudyNotes/blob/master/Git/git_emoji_guide.md)
+
 ## Java初级
 
 + [Java简介](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/Java%E7%AE%80%E4%BB%8B.md)
