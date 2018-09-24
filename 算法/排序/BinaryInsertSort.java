@@ -1,4 +1,4 @@
-import edu.princeton.cs.algs4.In;
+package Sort;
 
 import java.util.Scanner;
 

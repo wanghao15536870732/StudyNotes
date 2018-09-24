@@ -1,3 +1,5 @@
+package Sort;
+
 import java.util.Scanner;
 
 public class SelectSort {

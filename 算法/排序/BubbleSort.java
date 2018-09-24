@@ -1,5 +1,8 @@
-import edu.princeton.cs.algs4.In;
+package Sort;
 
+import edu.princeton.cs.algs4.StdDraw;
+
+import java.awt.*;
 import java.util.Scanner;
 
 public class BubbleSort {
@@ -14,13 +17,22 @@ public class BubbleSort {
                 }
             }
         }
+        for (int k = 0; k < str.length; k++) {
+            double x = 1.0 * k / str.length;
+            double y = str[k] / 2.0;
+            double rw = 0.5 / str.length;
+            double rh = str[k] / 2.0;
+            StdDraw.setPenColor(Color.black);
+            StdDraw.filledRectangle(x,y,rw,rh);
+        }
+        StdDraw.show();
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("请输入一个数组：");
         String s1 = scanner.nextLine();
-        String[] s2 = s1.split(" ");
+        String[] s2 = s1.split(",");
         int[] str = new int[s2.length];
         for (int i = 0; i < str.length; i++) {
             str[i] = Integer.valueOf(s2[i]);
@@ -34,3 +46,4 @@ public class BubbleSort {
         scanner.close();
     }
 }
+//49,38,65,97,76,13,27,49,78,34,12,64,5,4,62,99,98,54,56,17,18,23,34,15,35,25,53,51
