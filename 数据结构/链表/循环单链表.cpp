@@ -24,14 +24,27 @@ node *dele(node *head,datatype x);
 node *rear(node *head);
 //自定义输入数据函数 
 node *my_scanf(node *head);
+//将一个普通链表转换成循环单链表
+node *change(node *head);
 
 int main()
 {
-	node *head;
+	int i = 0,j = 0;
+	node *head,*p;
 	head = init();
-	head = my_scanf(head); 
+	head = my_scanf(head);
+	printf("\n单链表各个节点的值为：\n");
+	head = change(head);
 	display(head);
-	head = dele(head,4);
+	printf("\n输入想要删除的节点数值:\n");
+	scanf("%d",&i);
+	head = dele(head,i);
+	printf("\n删除结点数值为 %d 的结点后的链表：\n",i); 
+	display(head);
+	printf("\n输入想要插入的结点位置以及数值：\n");
+	scanf("%d%d",&i,&j);
+	insert(head,j,i); 
+	printf("\n将数值 %d 插入到链表第 %d 位后的链表：\n",j,i);
 	display(head);
 	return 0;
 }
@@ -53,14 +66,14 @@ node *my_scanf(node *head)
 	int n,a;
 	printf("请输入数据的个数：\n");
 	scanf("%d",&n);
-	for(int a = 1;a <= n;a ++)
+	for(int a = 0;a < n;a ++)
 	{
 		int data = 0; 
 		scanf("%d",&data);
 		p = (node *)malloc(sizeof(node));
 		p->info = data;
 		p->next = NULL;
-		if(a == 1)
+		if(a == 0)
 		{
 			head = p;
 			q = p;
@@ -105,7 +118,6 @@ void display(node *head)
 		printf("\n循环单链表是空的");
 	else
 	{
-		printf("\n循环单链表各个结点的值分别为：\n");
 		//输出链表的第一个数据
 		printf("%5d",head->info);
 		p = head->next;//指向下一个结点
@@ -115,6 +127,7 @@ void display(node *head)
 			p = p->next;
 		}
 	}
+	printf("\n"); 
 }
 
 /**********************************************/
@@ -221,7 +234,7 @@ node *dele(node *head,datatype x)
 	node *pre = NULL,*q;
 	if(!head)
 	{
-		printf("\n循环单链表为空，无法进行删除操作！");
+		printf("\n循环单链表为空，无法进行删除操作！\n");
 		return head;
 	}
 	//从第一个结点开始查找
@@ -263,5 +276,30 @@ node *dele(node *head,datatype x)
 	}
 	return head;
 }
+
+/******************************************/
+/*****将一个普通链表转换成循环单链表*******/
+/*******************************************/
+node *change(node *head)
+{
+	node *p = head;
+	while(p->next != NULL)
+		p = p->next;
+	p->next = head; 
+	return head;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

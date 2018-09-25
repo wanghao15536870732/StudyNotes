@@ -10,7 +10,7 @@ typedef struct link_node{
 	struct link_node *next;
 }node;
 
-//建立一个空的单链表
+//建立一个空的带有头节点的单链表
 node *init();
 //输出带有头节点的单链表中各个节点的值
 void display(node *head);
@@ -25,12 +25,21 @@ node *my_scanf(node *head);
 
 int main()
 {
-	node *head;
+	int i = 0,j = 0;
+	node *head,*p;
 	head = init();
 	head = my_scanf(head);
+	printf("\n单链表各个节点的值为：\n");
 	display(head);
-	head = dele(head,4);
-	insert(head,100,3);
+	printf("\n输入想要删除的节点数值:\n");
+	scanf("%d",&i);
+	head = dele(head,i);
+	printf("\n删除结点数值为%d的结点后的链表：\n",i); 
+	display(head);
+	printf("\n输入想要插入的结点位置以及数值：\n");
+	scanf("%d%d",&i,&j);
+	insert(head,j,i); 
+	printf("\n将数值%d插入到链表第%d位后的链表：\n",j,i);
 	display(head);
 	return 0;
 }
@@ -47,7 +56,6 @@ node *my_scanf(node *head)
 		int data = 0; 
 		scanf("%d",&data);
 		p = (node *)malloc(sizeof(node));
-		p->info = data;
 		p->next = NULL;
 		if(a == 1)
 		{
@@ -56,6 +64,7 @@ node *my_scanf(node *head)
 		}
 		else
 		{
+			p->info = data;
 			q->next = p;
 			q = p;
 		}
@@ -86,13 +95,13 @@ void display(node *head)
 		printf("\n带头节点的单链表是空的！");
 	else
 	{
-		printf("\n单链表各个节点的值为：\n");
 		while(p)
 		{
 			printf("%5d",p->info);
 			p = p->next;
 		}
 	}
+	printf("\n");
 }
 
 /*********************************************************/
@@ -166,5 +175,4 @@ node *dele(node *head,datatype x)
 	}
 	return head;
 }
-
 

@@ -4,7 +4,7 @@
 
 ## 一、新建代码库
 
-```python
+```git
 # 在当前目录新建一个Git代码库
 $ git init
 
