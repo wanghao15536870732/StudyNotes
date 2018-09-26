@@ -1,3 +1,7 @@
+/*
+习题3.2 求一个单链表的结点个数
+*/
+
 #include "stdio.h"
 #include "stdlib.h"
 
