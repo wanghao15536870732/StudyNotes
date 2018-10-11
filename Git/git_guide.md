@@ -365,4 +365,20 @@ $ git push origin defvelop
 $ git checkout wanghao
 ```
 
+## 常见错误
+
++ git 在pull或者合并分支的时候有时会遇到这个界面。可以不管(直接下面3,4步)，如果要输入解释的话就需要:
+
+![f](https://upload-images.jianshu.io/upload_images/9140378-079adb4a4c855897.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640)
+
++ 1.按键盘字母 i 进入insert模式
+
++ 2.修改最上面那行黄色合并信息,可以不修改
+
++ 3.按键盘左上角"Esc"
+
++ 4.输入":wq",注意是冒号+wq,按回车键即可
+
+
+
 ### 参考自[阮一峰的网络日志](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)，如有任何错误，请指正受教。

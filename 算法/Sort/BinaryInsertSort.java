@@ -8,25 +8,25 @@ import java.util.Scanner;
  */
 public class BinaryInsertSort {
 
-    public void binaryInsertSort(int[] str){
+    public void binaryInsertSort(int[] str) {
         for (int i = 1; i < str.length; i++) {
-            if(str[i] < str[i - 1]){
-                //定义temp储存将要插入的数
+            if (str[i] < str[i - 1]) {
+                // 定义temp储存将要插入的数
                 int temp = str[i];
-                int left = 0;  //定义左边的数，从str[0]开始
-                int right = i - 1;  //定义最右边的
-                while(left <= right){
-                    int mid = (left + right) / 2;  //定义mid中间位
-                    if(str[mid] < temp)  {    //中间位与str[i]比较
+                int left = 0; // 定义左边的数，从str[0]开始
+                int right = i - 1; // 定义最右边的
+                while (left <= right) {
+                    int mid = (left + right) / 2; // 定义mid中间位
+                    if (str[mid] < temp) { // 中间位与str[i]比较
                         left = left + 1;
-                    }else {      //通过if语句找到应该插入的位置str[left]
+                    } else { // 通过if语句找到应该插入的位置str[left]
                         right = right - 1;
                     }
                 }
-                for (int j = i; j > left; j--) { //将 str[left]->str[i - 1] 的数都向后挪一位
+                for (int j = i; j > left; j--) { // 将 str[left]->str[i - 1] 的数都向后挪一位
                     str[j] = str[j - 1];
                 }
-                str[left] = temp;     //最后将str[i] 插入 str[left]
+                str[left] = temp; // 最后将str[i] 插入 str[left]
             }
         }
     }

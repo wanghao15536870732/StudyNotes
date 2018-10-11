@@ -1,3 +1,26 @@
+/*
+1、实验目的
+通过本实验，掌握线性表链式存储结构的基本原理和基本运算以及在实际问题中的应用。
+2、实验内容                                                      
+  建立某班学生的通讯录，要求用链表存储。
+  具体功能包括：
+（1）可以实现插入一个同学的通讯录记录；
+ 	（2）能够删除某位同学的通讯录；
+  	（3）对通讯录打印输出。
+3、实验要求
+（1）定义通讯录内容的结构体；
+（2）建立存储通讯录的链表结构并初始化；                                                 
+（3）建立主函数：
+       1）建立录入函数（返回主界面）
+       2）建立插入函数（返回主界面）
+       3）建立删除函数（返回主界面）
+       4）建立输出和打印函数（返回主界面）
+            I）通过循环对所有成员记录输出
+           II）输出指定姓名的某个同学的通讯录记录
+       5）退出 
+*/
+
+
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
@@ -7,7 +30,7 @@
 /**************************/
 typedef struct link_node{
 	char *info[10]; //学号
-	char *name[12];  // 姓名
+	char name[12];  // 姓名
 	char *phone[12]; //通讯录记录;
 	struct link_node *next;
 }node;
@@ -130,43 +153,13 @@ node *insert(node *head,int i)
 	return head;
 }
 
-node *dele(node *head)
-{
-	char id[10];
-	printf("请输入想要删除的通讯录号码：\n");
-	scanf("%s",id);
-	node *pre = NULL,*p;
-	if(!head)
-	{
-		printf("单链表是空的！");
-		return head;
-	}
-	p = head;
-	printf("%s",head->info);
-	//指针指向数据存在并且没有找到符合的数据
-	while(p && *p->info != id);
-	{
-		pre = p;
-		p = p->next;
-	}
-	if(p)
-	{
-		//前驱结点不存在，即想要删除第一个数据
-		if(!pre)
-			head = head->next;
-		else
-			pre->next = p->next;
-		free(p);
-	}
-	return head;
-}
 
-node *dele2(node *head)
+node *dele(node *head)
 {
 	int id = 0;
 	int j = 1;
 	printf("请输入想要删除的通讯录的位置：\n");
-	scanf("%d",id);
+	scanf("%d",&id);
 	node *pre = NULL,*p;
 	if(!head)
 	{
@@ -175,7 +168,7 @@ node *dele2(node *head)
 	}
 	p = head;
 	//指针指向数据存在并且没有找到符合的数据
-	while(p && id != j);
+	while(p && (id != j));
 	{
 		pre = p;
 		p = p->next;
@@ -193,19 +186,35 @@ node *dele2(node *head)
 	return head;
 }
 
+void print(node *head)
+{
+	char name[12];
+	printf("请输入想要查找的学生姓名：\n");
+	scanf("%s",name);
+	node *p = head;
+	if(!head)
+		printf("链表为空！无法查询！"); 
+	//指针指向数据存在并且没有找到符合的数据
+	while(p && (strcmp(name,p->name) != 0))
+		p = p->next;
+	printf("\n\t查找成功！\n\t该学生的信息为：\n");
+	printf("%12s%16s%18s","学号","姓名","通讯录记录\n");
+	printf("%15s%15s%15s\n",p->info,p->name,p->phone);
+}
 
 void interface()
 {
+	printf("\t\t------------------------------------\n");
 	printf("\t\t******简易学生通讯录******\n\n");
 	printf("\t\t0.清屏\n");
 	printf("\t\t1.录入联系人信息\n");
 	printf("\t\t2.插入联系人信息\n");
 	printf("\t\t3.删除联系人信息\n");
 	printf("\t\t4.打印所有联系人信息\n");
-	printf("\t\t5.退出\n");
+	printf("\t\t5.根据学生姓名查找通讯录记录并打印\n");
+	printf("\t\t6.退出\n");
+	printf("\t\t------------------------------------\n");
 }
-
-
 
 
 int main()
@@ -213,9 +222,9 @@ int main()
 	int i = 0,j = 0;
 	node *head,*p;
 	head = init();
+	interface();
 	while(1)
 	{
-		interface();
 		printf("输入功能编号:\n");
 		scanf("%d",&i);
 		switch(i)
@@ -225,7 +234,8 @@ int main()
 				break;
 			case 1:{
 				head = my_scanf(head);
-				system("cls");
+				printf("\t\t录入成功!\n"); 
+				printf("------------------------------------\n");
 				break;
 			}
 			case 2:{
@@ -233,36 +243,38 @@ int main()
 				printf("请输入想要插入的位置；\n");
 				scanf("%d",&j); 
 				head = insert(head,j);
+				printf("\n插入完的通讯录：\n");
 				display(head);
+				printf("------------------------------------\n");
 				break;
 			}
 			case 3:{
-				dele2(head);
+				head = dele(head);
+				printf("删除完的通讯录：\n");
 				display(head);
+				printf("------------------------------------\n");
 				break;
 			}
 			case 4:{
 				printf("\t\n通讯录中的记录：\n\n");
 				display(head);
+				printf("------------------------------------\n");
 				break;
 			}
-			case 5:
+			case 5:{
+				print(head);
+				printf("------------------------------------\n");
+				break;
+			}
+			case 6:
 				exit(0);
 				break;
 			default:
 				printf("\t->输入有误,重新输入<-\n");
 				break;
 		}
-		printf("\t按任意键继续");
-		getchar();
 	}
 	return 0;
 }
-
-
-
-
-
-
 
 

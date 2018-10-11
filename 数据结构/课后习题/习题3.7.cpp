@@ -1,3 +1,10 @@
+
+/*
+设计一个算法，将一个节点值为自然数的单链表拆分成两个单链表
+原表中保留值为偶数的结点，而值为奇数的结点按他们在原表中的
+相对次序组成一个新的单链表 
+*/
+
 #include "stdio.h"
 #include "stdlib.h"
 
@@ -149,13 +156,20 @@ node *surplus(node *head)
 	{
 		if(pre == head && pre->info % 2 != 0)
 			head = head->next;
-		if(p != head && p->info % 2 != 0)
+		if(p->info % 2 != 0)
+		{
 			pre->next = p->next;
-		pre = p;
-		p = p->next;
+			p = pre->next; 
+		}
+		else
+		{
+			pre = p;
+			p = p->next;
+		}
 	}
 	return head;
 }
+
 
 /**************************************/
 /****单链表中删除一个值为x的结点******/
