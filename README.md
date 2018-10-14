@@ -74,6 +74,10 @@
 + [git 常用命令](https://github.com/wanghao15536870732/StudyNotes/blob/master/Git/git_guide.md)
 + [git commit 添加emoji](https://github.com/wanghao15536870732/StudyNotes/blob/master/Git/git_emoji_guide.md)
 
+# Java
+
++ [HeadFirstJava](https://pan.baidu.com/s/1CzdoA0qBTsFuHP-xOLnLMg) 提取码：6cs3
+
 ## Java初级
 
 + [Java简介](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/Java%E7%AE%80%E4%BB%8B.md)
@@ -85,6 +89,7 @@
 + [面向对象基础知识(三) this关键字、引用传递](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86(%E4%B8%89).md)
 + [面向对象基础知识(四) static 关键字、代码块和内部类](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86(%E5%9B%9B).md)
 
+
 ## Java进阶
 
 + [接口的应用 -- 代理模式](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%BA%94%E7%94%A8%20--%20%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F.md)
@@ -95,14 +100,17 @@
 + [Java IO 编程 文件操作类 File、字节流与字符流](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/Java%20IO%20%E7%BC%96%E7%A8%8B.md)
 + [面向对象进阶知识(一) 继承性、方法覆写和多态性](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86(%E4%B8%80).md)
 + [面向对象进阶知识(二) 抽象类、接口、基本数据类型包装类](https://github.com/wanghao15536870732/StudyNotes/blob/master/Java/%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E9%AB%98%E7%BA%A7%E7%9F%A5%E8%AF%86(%E4%BA%8C).md)
-
 ## Android
 
 ### Android 第一行代码
 
++ [第一行代码（第2版）](https://pan.baidu.com/s/1Gf3taiVUJBXfZ9YalZvOPw) 提取码：ulgk
+
 + [解决RecyclerView遮住Toolber的问题](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_first_line/android-first-line.md)
 
 ### Android 编程权威指南
+
++ [Android编程权威指南 第3版 ](https://pan.baidu.com/s/1rzF9eRqKVMDKDpAp0uMaOQ) 提取码：5si8
 
 + [Android编程权威指南 (第2版) --第12章 对话框 挑战练习](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_guide/android-note-1.md)
 + [Android编程权威指南（第2版）--第13章 工具栏 挑战练习](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/android_guide/android-note-2.md)
@@ -122,6 +130,12 @@
 
 + [第一章 Activity的生命周期和启动模式](https://github.com/wanghao15536870732/StudyNotes/blob/master/Android/Android%E5%BC%80%E5%8F%91%E8%89%BA%E6%9C%AF%E6%8E%A2%E7%B4%A2/%E7%AC%AC%E4%B8%80%E7%AB%A0.md)
 
+
+# Python
+
++ [Python编程快速上手-让繁琐工作自动化](https://pan.baidu.com/s/1ii7japecYr0xFyuNR3NyNQ) 提取码：eh26
++ [Python计算机视觉编程](https://pan.baidu.com/s/1B8HVpmbwGbWD-i_PNYpGmA) 提取码：e2pf
+
 ## Python初级
 
 + [用正则表达式查找文本模式](https://github.com/wanghao15536870732/StudyNotes/blob/master/python/Python%E7%BC%96%E7%A8%8B%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%20%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0(%E4%B8%80).md)
@@ -132,7 +146,9 @@
 
 + [Python快速上手源代码](https://github.com/wanghao15536870732/StudyNotes/tree/master/python/Python%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E6%BA%90%E4%BB%A3%E7%A0%81)
 
-## 数据结构
+# 数据结构
+
++ [数据结构与算法分析：C语言描述](https://pan.baidu.com/s/1HsKolexw8V_CMXAxcHMclw) 提取码：ij4b
 
 ### 顺序表
 
@@ -159,6 +175,10 @@
 + [宿舍管理系统](https://github.com/wanghao15536870732/StudyNotes/tree/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%AF%BE%E8%AE%BE%E9%AA%8C%E6%94%B6--%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F)
 
 ## 算法
+
++ [啊哈！算法.啊哈磊.扫描版](https://pan.baidu.com/s/1vBoZtVNAfbLZNsaiHbHZaQ) 提取码：4e8v
++ [算法4](https://pan.baidu.com/s/1g2QrqXNQn8Vqlw4NEp4VZQ) 提取码：8s9z
++ [算法竞赛入门经典](https://pan.baidu.com/s/1QYXLgc9vFrtrria6Rgv5LA) 提取码：0txy
 
 ### Sort
 
