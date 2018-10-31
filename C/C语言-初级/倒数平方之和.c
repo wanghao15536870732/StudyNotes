@@ -6,7 +6,7 @@
 #include <stdio.h>
 int main()
 {	
-	int n,i,j,d;
+	int n,i;
 	double s;
 	printf("请输入一个正整数 ：");
 	scanf("%d",&n);

@@ -5,6 +5,7 @@
 */ 
 
 #include <stdio.h>
+#include <stdlib.h>
 int main()
 {	
 	int m,n,i,s;
@@ -18,5 +19,6 @@ int main()
 		if(s > m) break; 
 	}
 	printf("%d",i - 1);
+	system("pause");
 	return 0;
 } 

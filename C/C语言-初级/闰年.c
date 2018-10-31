@@ -6,6 +6,7 @@
 */ 
 
 #include <stdio.h>
+#include <stdlib.h>
 int main()
 {
 	int year;
@@ -19,6 +20,7 @@ int main()
 	{
 		printf("0");
 	}
+	system("pause");
 	return 0;
 }
 

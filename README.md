@@ -67,6 +67,7 @@
 
 ## C ++
 
++ [Vscode C++ 环境配置](https://blog.csdn.net/c_duoduo/article/details/51615381)
 + [iostream](https://github.com/wanghao15536870732/StudyNotes/blob/master/C%2B%2B/ioStream.cpp)
 
 ## Git
@@ -155,6 +156,8 @@
 + [顺序表 -- 两个顺序表的合成](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E9%A1%BA%E5%BA%8F%E8%A1%A8%20--%20%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E5%90%88%E6%88%90.cpp)
 + [顺序表 -- 以a1为界限划分](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A1%BA%E5%BA%8F%E8%A1%A8/%E9%A1%BA%E5%BA%8F%E8%A1%A8%20--%20%E4%BB%A5a1%E4%B8%BA%E7%95%8C%E9%99%90%E5%88%92%E5%88%86.cpp)
 
++ [字符串顺序储存](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A1%BA%E5%BA%8F%E5%82%A8%E5%AD%98.cpp)
+
 ### 栈
 
 + [栈的应用 -- 括号匹配](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8%20--%20%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D.cpp)
@@ -169,10 +172,16 @@
 + [普通单链表](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E6%99%AE%E9%80%9A%E5%8D%95%E9%93%BE%E8%A1%A8.cpp)
 + [带有头结点的单链表](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E5%B8%A6%E6%9C%89%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8.cpp)
 + [循环单链表](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E5%BE%AA%E7%8E%AF%E5%8D%95%E9%93%BE%E8%A1%A8.cpp)
++ [字符串链式储存](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%93%BE%E5%BC%8F%E5%82%A8%E5%AD%98.cpp)
 
 ### 实验室暑假课设验收
 
 + [宿舍管理系统](https://github.com/wanghao15536870732/StudyNotes/tree/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E5%AE%A4%E8%AF%BE%E8%AE%BE%E9%AA%8C%E6%94%B6--%E5%AE%BF%E8%88%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F)
+
+### 实验课
+
++ [建立某班学生的通讯录](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E8%AF%BE/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E8%AF%BE%E4%B8%80.md)
+  + [源码](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E8%AF%BE/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E4%B8%80.cpp)
 
 ## 算法
 
