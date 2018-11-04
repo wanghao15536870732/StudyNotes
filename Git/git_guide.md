@@ -379,4 +379,4 @@ $ git checkout wanghao
 
 + 4.输入":wq",注意是冒号+wq,按回车键即可
 
-### 参考自[阮一峰的网络日志](http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)，如有任何错误，请指正受教。
+### 如有任何错误，请指正受教。
