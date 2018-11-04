@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
     "C_Cpp.errorSquiggles": "Enabled", //纠错
     "files.associations": {
         "system_error": "c",
