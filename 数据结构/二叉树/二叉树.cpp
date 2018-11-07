@@ -181,6 +181,45 @@ bintnode *createbintree1()
 	return t; 
 }
 
+//二叉树的查找
+bintnode *locate(bintnode *t,int x)
+{
+	bintnode *p;
+	if(t == NULL)
+		return NULL;
+	else if(t->data == x)
+		return t;
+	else
+	{
+		p = locate(t->lchild,x);
+		if(p)
+			return p;
+		else
+			return locate(t->rchild,x); 
+	}
+}
+
+//统计二叉树中的节点个数
+int numofnode(bintnode *t)
+{
+	if(t == NULL)
+		return 0;
+	else
+		return(numofnode(t->lchild) + numofnode(t->rchild) + 1);
+}
+
+//判断二叉树是否等价
+int isequal(bintnode *t1,bintnode *t2)
+{
+	int t = 0;
+	if(t1 == NULL && t2 == NULL)
+		t = 1;
+	else if(t1 != NULL && t2 != NULL)
+		if(t1->data == t2->data)
+			if(isequal(t1->lchild,t1->rchild))
+				t = isequal(t1->lchild,t2->rchild);
+	return (t);
+}
 
 int main()
 {
@@ -197,9 +236,9 @@ int main()
 	printf("\n后序遍历递归输出这颗二叉树：\n");
 	postorder(root);
 	printf("\n后序遍历非递归输出这颗二叉树：\n");
-	postorder(root); 
+	postorder(root);
 	printf("\n");
-	system("pause");
+	printf("该二叉树当中的结点个数为：%d\n",numofnode(root));
 	return 0;
 }
 //cba###de#gf##h###
