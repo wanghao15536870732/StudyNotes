@@ -199,7 +199,7 @@ bintnode *locate(bintnode *t,int x)
 	}
 }
 
-//统计二叉树中的节点个数
+//递归统计二叉树中的节点个数
 int numofnode(bintnode *t)
 {
 	if(t == NULL)
@@ -207,6 +207,29 @@ int numofnode(bintnode *t)
 	else
 		return(numofnode(t->lchild) + numofnode(t->rchild) + 1);
 }
+
+//非递归统计二叉树中的节点个数
+int numofleaf(bintnode *t)
+{
+	int count = 0;
+	seqstack s;
+	s.top = 0;
+	while((t) || (s.top != 0))
+	{
+		if(t)
+		{
+			count ++;
+			push(&s,t);
+			t = t->lchild;
+		}
+		else
+		{
+			t = pop(&s);
+			t = t->rchild;
+		}
+	}
+	return count;
+} 
 
 //判断二叉树是否等价
 int isequal(bintnode *t1,bintnode *t2)
@@ -219,6 +242,28 @@ int isequal(bintnode *t1,bintnode *t2)
 			if(isequal(t1->lchild,t1->rchild))
 				t = isequal(t1->lchild,t2->rchild);
 	return (t);
+}
+
+void inorderlastnode(bintnode *t)
+{
+	seqstack s;
+	s.top = 0;
+	bintnode *p = NULL;
+	while((t != NULL) || (s.top != 0))
+	{
+		if(t)
+		{
+			p = t;
+			push(&s,t);
+			t = t->lchild;
+		}
+		else
+		{
+			t = pop(&s);
+			t = t->rchild;
+		}
+	}
+	printf("\n中序遍历的最后一个结点为：%c\n",p->data);
 }
 
 int main()
@@ -238,7 +283,10 @@ int main()
 	printf("\n后序遍历非递归输出这颗二叉树：\n");
 	postorder(root);
 	printf("\n");
-	printf("该二叉树当中的结点个数为：%d\n",numofnode(root));
+	printf("递归该二叉树当中的结点个数为：%d\n",numofnode(root));
+	printf("\n");
+	printf("非递归该二叉树当中的结点个数为：%d\n",numofleaf(root));
+	inorderlastnode(root);
 	return 0;
 }
 //cba###de#gf##h###
