@@ -1,6 +1,6 @@
 #include "stdio.h"
 #include "stdlib.h"
- 
+
 typedef struct node
 {
 	char data;
@@ -14,14 +14,14 @@ bintnode *createbintree()
 	char ch;
 	bintnode *t;
 	if((ch = getchar()) == '#')
-		t = NULL;
+		t = NULL;+
 	else
 	{
 		t = (bintnode *)malloc(sizeof(bintnode));
 		t->data = ch;
 		t->lchild = createbintree();
 		t->rchild = createbintree();
-	} 
+	}
 	return t;
 }
 
@@ -36,7 +36,7 @@ void inthreading(bintnode *p)
 		{
 			if(pre->rtag == 1)
 				pre->rchild = p;
-			if(p->ltag == 1) 
+			if(p->ltag == 1)
 				p->lchild = pre;
 		}
 		pre = p;
@@ -44,16 +44,16 @@ void inthreading(bintnode *p)
 	}
 }
 
-//创建中序穿线二叉树 
+//创建中序穿线二叉树
 void createthrtree(bintnode *p)
 {
 	p = createbintree();
 	inthreading(p);
-} 
+}
 
 int main()
-{	
+{
 	bintnode *root;
-	createthrtree(root);	
+	createthrtree(root);
 	return 0;
 }

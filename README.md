@@ -150,6 +150,7 @@
 # 数据结构
 
 + [数据结构与算法分析：C语言描述](https://pan.baidu.com/s/1HsKolexw8V_CMXAxcHMclw) 提取码：ij4b
++ [数据结构简介](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md)
 
 ### 顺序表
 
@@ -182,6 +183,12 @@
 
 + [建立某班学生的通讯录](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E8%AF%BE/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E8%AF%BE%E4%B8%80.md)
   + [源码](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E8%AF%BE/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E4%B8%80.cpp)
+
+### 二叉树
+
++ [简单二叉树](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%A0%91/%E4%BA%8C%E5%8F%89%E6%A0%91.cpp)
+
++ [中序穿线二叉树](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%A0%91/%E4%B8%AD%E5%BA%8F%E7%A9%BF%E7%BA%BF%E4%BA%8C%E5%8F%89%E6%A0%91.cpp)
 
 ## 算法
 
