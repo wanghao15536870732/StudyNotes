@@ -11,3 +11,24 @@ public class Hello { // 定义一个类
     }
 }
 ```
+
+## 快捷键
+
+```java
+// sout
+System.out.println("");
+
+// psvm
+public static void main(String args[]) {
+
+}
+```
+
+- 直接复制一行代码 Ctrl+D
+- 格式化代码  Ctrl+Alt+L
+- 注释代码   Ctrl + /单行 Ctrl + shift + / 多行
+- 显示方法的参数   Ctrl + p
+- 生成gettersetter方法 Alt + Insert
+- Ctrl + Shift + 回车     **补全本行**
+- Ctrl + p  在函数中显示参数
+- Ctrl + Shift + F10  运行main

@@ -2,6 +2,16 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "CodeLens (Launch) - dynamivArray",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "stopOnEntry": false,
+            "mainClass": "Thinking.pravite.dynamivArray",
+            "args": ""
+        },
+        {
             "name": "(g++) Launch",
             "type": "cppdbg",
             "request": "launch",
@@ -22,6 +32,6 @@
                     "ignoreFailures": true
                 }
             ]
-        },
+        }
     ]
 }

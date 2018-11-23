@@ -42,5 +42,7 @@
         "ios": "cpp"
     },
     "team.showWelcomeMessage": false,
-    "C_Cpp.intelliSenseEngineFallback": "Disabled"
+    "C_Cpp.intelliSenseEngineFallback": "Disabled",
+    "files.autoGuessEncoding": true,
+    "editor.renderControlCharacters": true
 }
