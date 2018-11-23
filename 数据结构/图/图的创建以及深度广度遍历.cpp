@@ -1,26 +1,26 @@
 #include"stdio.h"
 #include"stdlib.h"
-#define M 20  /*Ô¤¶¨ÒåÍ¼µÄ×î´ó¶¥µãÊı*/
+#define M 20  /*é¢„å®šä¹‰å›¾çš„æœ€å¤§é¡¶ç‚¹æ•°*/
 #include"string.h"
 
-typedef struct node{  //±ß±í½áµã 
-	int adjvex;        //ÁÚ½Óµã 
+typedef struct node{  //è¾¹è¡¨ç»“ç‚¹ 
+	int adjvex;        //é‚»æ¥ç‚¹ 
 	struct node *next;
 }edgenode;
 
-typedef struct vnode{   //Í·½ÚµãÀàĞÍ 
-	char vertex;        //¶¥µãĞÅÏ¢ 
-	edgenode *firstedge;  //ÁÚ½Ó±í±íÍ·Ö¸Õë 
+typedef struct vnode{   //å¤´èŠ‚ç‚¹ç±»å‹ 
+	char vertex;        //é¡¶ç‚¹ä¿¡æ¯ 
+	edgenode *firstedge;  //é‚»æ¥è¡¨è¡¨å¤´æŒ‡é’ˆ 
 }vertexnode;
 
-typedef struct{         //ÁÚ½Ó±íÀàĞÍ 
-	vertexnode adjlist[M];  //´æ·ÅÍ·½ÚµãµÄË³Ğò±í 
-	int n,e;     //Í¼µÄ¶¥µãÊıÓë±ßÊı 
+typedef struct{         //é‚»æ¥è¡¨ç±»å‹ 
+	vertexnode adjlist[M];  //å­˜æ”¾å¤´èŠ‚ç‚¹çš„é¡ºåºè¡¨ 
+	int n,e;     //å›¾çš„é¡¶ç‚¹æ•°ä¸è¾¹æ•° 
 }linkedgraph;
 
 int visited[M];
 
-void createwithfile(linkedgraph *g,char *filename,int c)  //c = 0±íÊ¾´´½¨ÎŞÏòÍ¼ 
+void createwithfile(linkedgraph *g,char *filename,int c)  //c = 0è¡¨ç¤ºåˆ›å»ºæ— å‘å›¾ 
 {
 	int i,j,k;
 	edgenode *s;
@@ -28,66 +28,66 @@ void createwithfile(linkedgraph *g,char *filename,int c)  //c = 0±íÊ¾´´½¨ÎŞÏòÍ¼
 	fp = fopen(filename,"r");
 	if(fp)
 	{
-		fscanf(fp,"%d%d",&g->n,&g->e); //¶ÁÈë¶¥µãÊıÓë±ßÊı 
+		fscanf(fp,"%d%d",&g->n,&g->e); //è¯»å…¥é¡¶ç‚¹æ•°ä¸è¾¹æ•° 
 		for(i = 0;i < g->n;i ++)
 		{
-			fscanf(fp,"%d",&g->adjlist[i].vertex);  //¶ÁÈë¶¥µãĞÅÏ¢ 
-			g->adjlist[i].firstedge = NULL;       //±ß±íÖÃÎª¿Õ±í 
+			fscanf(fp,"%d",&g->adjlist[i].vertex);  //è¯»å…¥é¡¶ç‚¹ä¿¡æ¯ 
+			g->adjlist[i].firstedge = NULL;       //è¾¹è¡¨ç½®ä¸ºç©ºè¡¨ 
 		}
-		for(k =0 ;k < g->e;k ++)    //Ñ­»·e´Î½¨Á¢±ß±í 
+		for(k =0 ;k < g->e;k ++)    //å¾ªç¯eæ¬¡å»ºç«‹è¾¹è¡¨ 
 		{
-			fscanf(fp,"%d%d",&i,&j);      //¶ÁÈëÎŞĞò¶Ô£¨i,j) 
+			fscanf(fp,"%d%d",&i,&j);      //è¯»å…¥æ— åºå¯¹ï¼ˆi,j) 
 			s = (edgenode*)malloc(sizeof(edgenode));
-			s->adjvex = j;       //ÁÚ½ÓµãĞòºÅÎªj 
+			s->adjvex = j;       //é‚»æ¥ç‚¹åºå·ä¸ºj 
 			s->next = g->adjlist[i].firstedge;
-			g->adjlist[i].firstedge = s;  //½«ĞÂ½Úµã*s²åÈë¶¥µãViµÄ±ß±íÍ·²¿ 
+			g->adjlist[i].firstedge = s;  //å°†æ–°èŠ‚ç‚¹*sæ’å…¥é¡¶ç‚¹Viçš„è¾¹è¡¨å¤´éƒ¨ 
 			if(c == 0)
 			{
 				s = (edgenode*)malloc(sizeof(edgenode));
-			    s->adjvex = i;  //ÁÚ½ÓµãĞòºÅÎªi 
-			    s->next = g->adjlist[j].firstedge;  //½«ĞÂ½Úµã*s²åÈë¶¥µãVjµÄ±ß±íÍ·²¿ 
+			    s->adjvex = i;  //é‚»æ¥ç‚¹åºå·ä¸ºi 
+			    s->next = g->adjlist[j].firstedge;  //å°†æ–°èŠ‚ç‚¹*sæ’å…¥é¡¶ç‚¹Vjçš„è¾¹è¡¨å¤´éƒ¨ 
 			    g->adjlist[j].firstedge = s;
 			}
 		}
 		fclose(fp);
 	}
 	else
-		g->n = 0;  ///ÎÄ¼ş´ò¿ªÊ§°Ü 
+		g->n = 0;  ///æ–‡ä»¶æ‰“å¼€å¤±è´¥ 
 
 }
 
-linkedgraph *create(int c)  //c = 0±íÊ¾´´½¨ÎŞÏòÍ¼ 
+linkedgraph *create(int c)  //c = 0è¡¨ç¤ºåˆ›å»ºæ— å‘å›¾ 
 {
 	linkedgraph *g;
 	g = (linkedgraph *)malloc(sizeof(linkedgraph));
 	int i,j,k;
 	edgenode *s;
-	printf("ÊäÈë½áµãÊıºÍ±ßÊı£º\n");
-	scanf("%d%d",&g->n,&g->e); //¶ÁÈë¶¥µãÊıÓë±ßÊı
-	printf("ÊäÈë½áµãÖµ£º\n");
+	printf("è¾“å…¥ç»“ç‚¹æ•°å’Œè¾¹æ•°ï¼š\n");
+	scanf("%d%d",&g->n,&g->e); //è¯»å…¥é¡¶ç‚¹æ•°ä¸è¾¹æ•°
+	printf("è¾“å…¥ç»“ç‚¹å€¼ï¼š\n");
 	getchar();
 	for(i = 0;i < g->n;i ++)
 	{
-		scanf("%c",&g->adjlist[i].vertex);  //¶ÁÈë¶¥µãĞÅÏ¢ 
+		scanf("%c",&g->adjlist[i].vertex);  //è¯»å…¥é¡¶ç‚¹ä¿¡æ¯ 
 		getchar();
-		g->adjlist[i].firstedge = NULL;       //±ß±íÖÃÎª¿Õ±í 
+		g->adjlist[i].firstedge = NULL;       //è¾¹è¡¨ç½®ä¸ºç©ºè¡¨ 
 	}
 	if(c == 0)
-		printf("ÊäÈëÎŞĞò¶Ô£º\n");
+		printf("è¾“å…¥æ— åºå¯¹ï¼š\n");
 	else
-		printf("ÊäÈëÓĞĞò¶Ô£º\n");
-	for(k = 0 ;k < g->e;k ++)    //Ñ­»·e´Î½¨Á¢±ß±í 
+		printf("è¾“å…¥æœ‰åºå¯¹ï¼š\n");
+	for(k = 0 ;k < g->e;k ++)    //å¾ªç¯eæ¬¡å»ºç«‹è¾¹è¡¨ 
 	{
-		scanf("%d%d",&i,&j);      //¶ÁÈëÎŞĞò¶Ô£¨i,j) 
+		scanf("%d%d",&i,&j);      //è¯»å…¥æ— åºå¯¹ï¼ˆi,j) 
 		s = (edgenode *)malloc(sizeof(edgenode));
-		s->adjvex = j;       //ÁÚ½ÓµãĞòºÅÎªj 
+		s->adjvex = j;       //é‚»æ¥ç‚¹åºå·ä¸ºj 
 		s->next = g->adjlist[i].firstedge;
-		g->adjlist[i].firstedge = s;  //½«ĞÂ½Úµã*s²åÈë¶¥µãViµÄ±ß±íÍ·²¿ 
+		g->adjlist[i].firstedge = s;  //å°†æ–°èŠ‚ç‚¹*sæ’å…¥é¡¶ç‚¹Viçš„è¾¹è¡¨å¤´éƒ¨ 
 		if(c == 0)
 		{
 			s = (edgenode*)malloc(sizeof(edgenode));
-		    s->adjvex = i;  //ÁÚ½ÓµãĞòºÅÎªi 
-		    s->next = g->adjlist[j].firstedge;  //½«ĞÂ½Úµã*s²åÈë¶¥µãVjµÄ±ß±íÍ·²¿ 
+		    s->adjvex = i;  //é‚»æ¥ç‚¹åºå·ä¸ºi 
+		    s->next = g->adjlist[j].firstedge;  //å°†æ–°èŠ‚ç‚¹*sæ’å…¥é¡¶ç‚¹Vjçš„è¾¹è¡¨å¤´éƒ¨ 
 		    g->adjlist[j].firstedge = s;
 		}
 	}
@@ -97,10 +97,10 @@ linkedgraph *create(int c)  //c = 0±íÊ¾´´½¨ÎŞÏòÍ¼
 void dfs(linkedgraph *g,int i)
 {
 	edgenode *p;
-	printf("visit vertex£º%c \n",g->adjlist[i].vertex);  //·ÃÎÊ¶¥µãi 
+	printf("visit vertexï¼š%c \n",g->adjlist[i].vertex);  //è®¿é—®é¡¶ç‚¹i 
 	visited[i] = 1;
 	p = g->adjlist[i].firstedge;
-	while(p)   //´ÓpµÄÁÚ½Óµã³ö·¢½øĞĞÉî¶ÈÓÅÏÈËÑË÷ 
+	while(p)   //ä»pçš„é‚»æ¥ç‚¹å‡ºå‘è¿›è¡Œæ·±åº¦ä¼˜å…ˆæœç´¢ 
 	{
 		if(!visited[p->adjvex])
 			dfs(g,p->adjvex);
@@ -121,15 +121,15 @@ void bfs(linkedgraph *g,int i)
 {
 	int j;
 	edgenode *p;
-	int queue[M],front,rear;  //´´½¨Ò»¸ö¶ÓÁĞ 
-	front = rear = 0;  //³õÊ¼»¯¿Õ¶ÓÁĞ
-	printf("%c ",g->adjlist[i].vertex);  //·ÃÎÊ¸ù½Úµã 
+	int queue[M],front,rear;  //åˆ›å»ºä¸€ä¸ªé˜Ÿåˆ— 
+	front = rear = 0;  //åˆå§‹åŒ–ç©ºé˜Ÿåˆ—
+	printf("%c ",g->adjlist[i].vertex);  //è®¿é—®æ ¹èŠ‚ç‚¹ 
 	visited[i] = 1;
-	queue[rear ++] = i;  //±»·ÃÎÊ½áµã½ø¶Ó 
+	queue[rear ++] = i;  //è¢«è®¿é—®ç»“ç‚¹è¿›é˜Ÿ 
 	while(rear > front)
 	{
-		j = queue[front ++]; //³ö¶Ó
-		p = g->adjlist[i].firstedge;
+		j = queue[front ++]; //å‡ºé˜Ÿ
+		p = g->adjlist[j].firstedge;
 		while(p)
 		{
 			if(visited[p->adjvex] == 0)
@@ -149,7 +149,7 @@ int bfstraverse(linkedgraph *g)
 	for(i = 0;i < g->n;i ++)
 		visited[i] = 0;
 	for(i = 0;i < g->n;i ++)
-		if(!visited[i])  //viÎ´±»·ÃÎÊ¹ı
+		if(!visited[i])  //viæœªè¢«è®¿é—®è¿‡
 		{
 			printf("\n");
 			count ++;
@@ -164,11 +164,11 @@ int main()
 {
 	linkedgraph *h;
 	h = create(0); 
-	printf("Éî¶È±éÀú£º\n");
+	printf("æ·±åº¦éå†ï¼š\n");
 	dfstraverse(h);
-	printf("¹ã¶È±éÀú£º\n");
+	printf("å¹¿åº¦éå†ï¼š\n");
 	int count = bfstraverse(h);
-	printf("\n´ËÍ¼µÄÁ¬Í¨·ÖÁ¿Îª£º\n");
+	printf("\næ­¤å›¾çš„è¿é€šåˆ†é‡ä¸ºï¼š\n");
 	printf("%d\n",count);
 	return 0;
 }
