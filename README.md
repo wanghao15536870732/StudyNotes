@@ -1,48 +1,13 @@
-
 ## C语言初级
 
-+ [一些算法题](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/c_note_1.md)
-+ [函数不大于](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E4%B8%8D%E5%A4%A7%E4%BA%8E.c)
-+ [主对角线之和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E4%B8%BB%E5%AF%B9%E8%A7%92%E7%BA%BF%E5%85%83%E7%B4%A0%E4%B9%8B%E5%92%8C.c)
-+ [倒数平方之和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%80%92%E6%95%B0%E5%B9%B3%E6%96%B9%E4%B9%8B%E5%92%8C.c)
-+ [倒数相减](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%80%92%E6%95%B0%E7%9B%B8%E5%87%8F.c)
-+ [冒泡排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.c)
-+ [分段函数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%88%86%E6%AE%B5%E5%87%BD%E6%95%B0.c)
-+ [删除指定字符串](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%AD%97%E7%AC%A6%E4%B8%B2.c)
-+ [十位百位个位相互转换](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%8D%81%E4%BD%8D%E7%99%BE%E4%BD%8D%E4%B8%AA%E4%BD%8D.c)
-+ [C语言各种字符图案](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%90%84%E7%A7%8D%E5%9B%BE%E6%A1%88.c)
-+ [同5、7整除](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%90%8C5%E3%80%817%E6%95%B4%E9%99%A4.c)
-+ [字符串插入](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8F%92%E5%85%A5.c)
-+ [字符串相接](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E6%8E%A5.c)
-+ [字符串衔接](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%94%E6%8E%A5.c)
-+ [字符类型判断](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B.c)
-+ [统计完数个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AE%8C%E6%95%B0%E4%B8%AA%E6%95%B0.c)
-+ [计算平均数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%B9%B3%E5%9D%87%E6%95%B0.c)
-+ [计算弹力小球高度](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%BC%B9%E5%8A%9B%E5%B0%8F%E7%90%83.c)
-+ [指定子字符串替换](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%8C%87%E5%AE%9A%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9B%BF%E6%8D%A2.c)
-+ [单链表](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%8C%87%E9%92%88.c)
-+ [指针排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%8C%87%E9%92%88%E6%8E%92%E5%BA%8F.c)
-+ [数列致反](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%95%B0%E5%88%97%E8%87%B4%E5%8F%8D.c)
-+ [计算数组最大值](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC.c)
-+ [统计数组非负数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%95%B0%E7%BB%84%E9%9D%9E%E8%B4%9F%E6%95%B0.c)
-+ [计算方程实根](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%96%B9%E7%A8%8B%E5%AE%9E%E6%A0%B9.c)
-+ [最小公倍数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0.c)
-+ [统计月的天数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%9C%88%E7%9A%84%E5%A4%A9%E6%95%B0.c)
-+ [母串指针查找子串出现次数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%AF%8D%E4%B8%B2%E6%8C%87%E9%92%88%E6%9F%A5%E6%89%BE%E5%AD%97%E4%B8%B2.c)
-+ [统计水仙花个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%B0%B4%E4%BB%99%E8%8A%B1%E4%B8%AA%E6%95%B0.c)
-+ [求三个数最小值](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%B1%82%E6%9C%80%E5%B0%8F%E5%80%BC.c)
-+ [矩阵平移](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%9F%A9%E9%98%B5%E5%B9%B3%E7%A7%BB.c)
-+ [计算矩阵最大值](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%9F%A9%E9%98%B5%E6%9C%80%E5%A4%A7%E5%80%BC.c)
-+ [矩阵转置](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE.c)
-+ [简易计算器](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8.c)
-+ [统计素数个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%BB%9F%E8%AE%A1%E7%B4%A0%E6%95%B0%E4%B8%AA%E6%95%B0.c)
-+ [统计自然数对个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E8%87%AA%E7%84%B6%E6%95%B0%E5%AF%B9.c)
-+ [统计英文字母个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E4%B8%AA%E6%95%B0.c)
-+ [计算运费](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E8%BF%90%E8%B4%B9.c)
-+ [计算是否闰年](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%97%B0%E5%B9%B4.c)
-+ [计算阶乘之和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%98%B6%E4%B9%98%E4%B9%8B%E5%92%8C.c)
-+ [高级字符串奇偶位比较](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%AB%98%E7%BA%A7%E5%AD%97%E7%AC%A6%E4%B8%B2.c)
-+ [高级计算器](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E5%99%A8.c)
+||||||||
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|[一些算法题](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/c_note_1.md)|[函数不大于](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E4%B8%8D%E5%A4%A7%E4%BA%8E.c)|[主对角线之和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E4%B8%BB%E5%AF%B9%E8%A7%92%E7%BA%BF%E5%85%83%E7%B4%A0%E4%B9%8B%E5%92%8C.c)|[倒数平方之和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%80%92%E6%95%B0%E5%B9%B3%E6%96%B9%E4%B9%8B%E5%92%8C.c)|[倒数相减](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%80%92%E6%95%B0%E7%9B%B8%E5%87%8F.c)|[冒泡排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%86%92%E6%B3%A1%E6%8E%92%E5%BA%8F.c)|[分段函数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%88%86%E6%AE%B5%E5%87%BD%E6%95%B0.c)|
+|[删除指定字符串](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%88%A0%E9%99%A4%E6%8C%87%E5%AE%9A%E5%AD%97%E7%AC%A6%E4%B8%B2.c)|[十位百位个位相互转换](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%8D%81%E4%BD%8D%E7%99%BE%E4%BD%8D%E4%B8%AA%E4%BD%8D.c)|[C语言各种字符图案](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%90%84%E7%A7%8D%E5%9B%BE%E6%A1%88.c)|[同5、7整除](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%90%8C5%E3%80%817%E6%95%B4%E9%99%A4.c)|[字符串插入](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8F%92%E5%85%A5.c)|[字符串相接](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9B%B8%E6%8E%A5.c)|[字符串衔接](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%A1%94%E6%8E%A5.c)|
+|[字符类型判断](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B.c)|[统计完数个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%AE%8C%E6%95%B0%E4%B8%AA%E6%95%B0.c)|[计算平均数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%B9%B3%E5%9D%87%E6%95%B0.c)|[计算弹力小球高度](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E5%BC%B9%E5%8A%9B%E5%B0%8F%E7%90%83.c)|[指定子字符串替换](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%8C%87%E5%AE%9A%E5%AD%90%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9B%BF%E6%8D%A2.c)|[单链表](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%8C%87%E9%92%88.c)|[指针排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%8C%87%E9%92%88%E6%8E%92%E5%BA%8F.c)|
+|[数列致反](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%95%B0%E5%88%97%E8%87%B4%E5%8F%8D.c)|[计算数组最大值](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%95%B0%E7%BB%84%E6%9C%80%E5%A4%A7%E5%80%BC.c)|[统计数组非负数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%95%B0%E7%BB%84%E9%9D%9E%E8%B4%9F%E6%95%B0.c)|[计算方程实根](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%96%B9%E7%A8%8B%E5%AE%9E%E6%A0%B9.c)|[最小公倍数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%9C%80%E5%B0%8F%E5%85%AC%E5%80%8D%E6%95%B0.c)|[统计月的天数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%9C%88%E7%9A%84%E5%A4%A9%E6%95%B0.c)|[母串指针查找子串出现次数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%AF%8D%E4%B8%B2%E6%8C%87%E9%92%88%E6%9F%A5%E6%89%BE%E5%AD%97%E4%B8%B2.c)|
+|[统计水仙花个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%B0%B4%E4%BB%99%E8%8A%B1%E4%B8%AA%E6%95%B0.c)|[求三个数最小值](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E6%B1%82%E6%9C%80%E5%B0%8F%E5%80%BC.c)|[矩阵平移](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%9F%A9%E9%98%B5%E5%B9%B3%E7%A7%BB.c)|[计算矩阵最大值](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%9F%A9%E9%98%B5%E6%9C%80%E5%A4%A7%E5%80%BC.c)|[矩阵转置](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE.c)|[简易计算器](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%AE%80%E6%98%93%E8%AE%A1%E7%AE%97%E5%99%A8.c)|[统计素数个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E7%BB%9F%E8%AE%A1%E7%B4%A0%E6%95%B0%E4%B8%AA%E6%95%B0.c)|
+|[统计自然数对个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E8%87%AA%E7%84%B6%E6%95%B0%E5%AF%B9.c)|[统计英文字母个数](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E8%8B%B1%E6%96%87%E5%AD%97%E6%AF%8D%E4%B8%AA%E6%95%B0.c)|[计算运费](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E8%BF%90%E8%B4%B9.c)|[计算是否闰年](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%97%B0%E5%B9%B4.c)|[计算阶乘之和](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%98%B6%E4%B9%98%E4%B9%8B%E5%92%8C.c)|[高级字符串奇偶位比较](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%AB%98%E7%BA%A7%E5%AD%97%E7%AC%A6%E4%B8%B2.c)|[高级计算器](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E5%88%9D%E7%BA%A7/%E9%AB%98%E7%BA%A7%E8%AE%A1%E7%AE%97%E5%99%A8.c)|
 
 ## C语言进阶
 
@@ -162,16 +127,23 @@
 
 + [栈的应用 -- 括号匹配](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/%E6%A0%88%E7%9A%84%E5%BA%94%E7%94%A8%20--%20%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D.cpp)
 + [中缀表达式转换后缀表达式](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/%E4%B8%AD%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%E8%BD%AC%E6%8D%A2%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F.cpp)
++ [链式栈](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E9%93%BE%E5%BC%8F%E6%A0%88.cpp)
 
 ### 队列
 
 + [队列基础](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%98%9F%E5%88%97.cpp)
++ [链式队列](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E9%93%BE%E5%BC%8F%E9%98%9F%E5%88%97.cpp)
 
 ### 线性表的链式储存
 
 + [普通单链表](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E6%99%AE%E9%80%9A%E5%8D%95%E9%93%BE%E8%A1%A8.cpp)
 + [带有头结点的单链表](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E5%B8%A6%E6%9C%89%E5%A4%B4%E7%BB%93%E7%82%B9%E7%9A%84%E5%8D%95%E9%93%BE%E8%A1%A8.cpp)
 + [循环单链表](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/%E5%BE%AA%E7%8E%AF%E5%8D%95%E9%93%BE%E8%A1%A8.cpp)
++ [字符串链式储存](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%93%BE%E5%BC%8F%E5%82%A8%E5%AD%98.cpp)
+
+### 字符串
+
++ [字符串顺序储存](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%A1%BA%E5%BA%8F%E5%82%A8%E5%AD%98.cpp)
 + [字符串链式储存](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/%E5%AD%97%E7%AC%A6%E4%B8%B2%E9%93%BE%E5%BC%8F%E5%82%A8%E5%AD%98.cpp)
 
 ### 实验室暑假课设验收
@@ -181,6 +153,8 @@
 ### 实验课
 
 + [建立某班学生的通讯录](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E8%AF%BE/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E8%AF%BE%E4%B8%80.md)  [代码](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E8%AF%BE/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AE%9E%E9%AA%8C%E4%B8%80.cpp)
++ [树的应用](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E8%AF%BE/%E4%BA%8C%E5%8F%89%E6%A0%91.md)
++ [借书证信息系统](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AE%9E%E9%AA%8C%E8%AF%BE/%E5%80%9F%E4%B9%A6%E8%AF%81%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F.md)
 
 ### 二叉树
 
@@ -196,6 +170,12 @@
 + [单源最短路径](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%8D%95%E6%BA%90%E6%9C%80%E7%9F%AD%E8%B7%AF%E5%BE%84.md)
 + [拓扑排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F.md)
 + [关键路径](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%9B%BE/%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84.md)
+
+### 课后题
+
+|||||||
+|:--:|:--:|:--:|:--:|:--:|:--:|
+|[习题3.2](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E4%B9%A0%E9%A2%983.2.cpp)|[习题3.4](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E4%B9%A0%E9%A2%983.4.cpp)|[习题3.5](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E4%B9%A0%E9%A2%983.5.cpp)|[习题3.6](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E4%B9%A0%E9%A2%983.6.cpp)|[习题3.7](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E4%B9%A0%E9%A2%983.7.cpp)|[习题3.8](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E8%AF%BE%E5%90%8E%E4%B9%A0%E9%A2%98/%E4%B9%A0%E9%A2%983.8.cpp)|
 
 ## 算法
 
