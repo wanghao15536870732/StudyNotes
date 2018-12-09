@@ -1,4 +1,4 @@
-# 3 android异步任务AsyncTask
+# android异步任务AsyncTask
 
 android的异步任务体系中还有一个非常重要的操作类：AsyncTask，其内部主要使用的是java的线程池和Handler来实现异步任务以及与UI线程的交互。本文主要解析AsyncTask的的使用与源码。
 
