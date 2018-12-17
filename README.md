@@ -181,7 +181,7 @@
 
 |内排序|冒泡排序|归并排序|基数排序|堆排序|快速排序|
 |:--:|:--:|:--:|:--:|:--:|:--:|
-|时间复杂度|O(n^2)|O(n*log2（N）)|O(b(n + rd))|O(nlog2(N)|O(n*log2（N）)|
+|时间复杂度|O(n^2)|O(n*log2(N)|O(b(n + rd))|O(nlog2(N))|O(n*log2(N))|
 |是否稳定|稳定|稳定|稳定|不稳定|不稳定|
 
 + [直接插入排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%86%85%E6%8E%92%E5%BA%8F/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.md)
