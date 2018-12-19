@@ -126,13 +126,40 @@ void LateTime(linkedgraph *gin, int ve[], int vl[], int seq[])
 		vl[i] = ve[seq[gin->n - 1]];
 	while (k > -1) //按照拓扑排序求个事件的最晚开始时间
 	{
+		//v = seq[k];
+		p = gin->adjlist[k].firstedge;
+		while (p)
+		{
+			j = p->adjvex;
+			if (vl[j] - p->len < vl[k])
+				vl[k] = vl[j] - p->len;
+			p = p->next;
+		}
+		k--;
+	}
+}
+
+void LateTime2(linkedgraph *gin, int ve[], int vl[], int seq[])
+{
+	int k = gin->n - 1;
+	int j = 0;
+	int v = 0;
+	edgenode *p = NULL;
+	for (int i = 0; i < gin->n; i++)
+		vl[i] = ve[seq[gin->n - 1]];
+	printf("\n拓扑排序序列：\n");
+	for (int i = 0; i < 10; i++)
+		printf("%d----->", seq[i]);
+	printf("\n");
+	while (k > -1) //按照拓扑排序求个事件的最晚开始时间
+	{
 		v = seq[k];
 		p = gin->adjlist[v].firstedge;
 		while (p)
 		{
 			j = p->adjvex;
-			if (vl[v] - p->len < vl[j])
-				vl[j] = vl[v] - p->len;
+			if ((vl[j] - p->len) < vl[v])
+				vl[v] = vl[j] - p->len;
 			p = p->next;
 		}
 		k--;
@@ -189,7 +216,7 @@ int main()
 	linkedgraph h;
 	h = create(filename, 1);
 	number = EarlistTime(&h, ve, seq);
-	LateTime(&h, ve, vl, seq);
+	LateTime2(&h, ve, vl, seq);
 	printf("\n");
 	printf("时间最早发生时间向量：\n");
 	for (int i = 0; i < 10; i++)
@@ -199,7 +226,27 @@ int main()
 	for (int i = 0; i < 10; i++)
 		printf("%d----->", vl[i]);
 	printf("\n");
-
+	printf("关键路径为:\n");
+	int m, i, n;
+	int earlist[15] = {0};
+	int late[15] = {0};
+	m = 0;
+	n = 0;
+	vertexnode vert;
+	for (i = 0; i < h.n; i++)
+	{
+		edgenode *p = h.adjlist[i].firstedge;
+		vert = h.adjlist[i];
+		while (p)
+		{
+			int k = p->adjvex;
+			if (ve[i] == vl[k] - p->len)
+				printf("%c-", vert.vertex);
+			p = p->next;
+		}
+	}
+	printf("%c", vert.vertex);
+	printf("\n");
 	system("pause");
 	return 0;
 }
