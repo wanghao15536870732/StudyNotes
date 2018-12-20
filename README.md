@@ -173,6 +173,9 @@
 
 ### 内排序
 
+![1](https://upload-images.jianshu.io/upload_images/9140378-92450e68241c6c9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
 |内排序|直接插入排序|二分插入排序|表插入排序|Shell插入排序|直接选择排序|
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |时间复杂度|O(n^2)|O(n^2)|O(n^2)|O(n^2)|O(n^2)|
@@ -183,6 +186,8 @@
 |:--:|:--:|:--:|:--:|:--:|:--:|
 |时间复杂度|O(n^2)|O(n*log2(N)|O(b(n + rd))|O(nlog2(N))|O(n*log2(N))|
 |是否稳定|稳定|稳定|稳定|不稳定|不稳定|
+
+
 
 + [直接插入排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%86%85%E6%8E%92%E5%BA%8F/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.md)
 + [二分插入排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%86%85%E6%8E%92%E5%BA%8F/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.md)

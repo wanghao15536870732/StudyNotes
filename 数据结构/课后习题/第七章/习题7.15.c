@@ -1,9 +1,3 @@
-/*假设二叉树采用链式方式存储，root为其根结点，p和q分别指向二叉树中任意两
-个结点，编写一个函数，返回p和q最近的共同祖先。
-
-【答】：方法同上题，利用后序遍历非递归算法分别求出p和q的公共祖先，然后再查找
-它们的最近公共祖先结点。*/
-
 #include <stdio.h>
 #include <stdlib.h>
 typedef char datatype;
@@ -78,7 +72,7 @@ void creat(bintree *t)
 {
     char ch;
     scanf("%c", &ch);
-    if (ch == ' ')
+    if (ch == '#')
         *t = NULL;
     else
     {
@@ -95,7 +89,13 @@ int main()
     printf("请输入扩充二叉树的前序序列：\n");
     creat(&root);
     printf("请输入树中的两个结点值：\n");
-    scanf("%1s%c", &x, &y);
+    printf("请输入第一个节点：\n");
+    getchar();
+    scanf("%c", &x);
+    printf("请输入第二个节点：\n");
+    getchar();
+    scanf("%c",&y);
+    printf("%c %c\n", x,y);
     SeekAncestor(root, x, y, &p);
     if (p)
         printf("%c和%c的最近公共祖先是：%c\n", x, y, p->data);
