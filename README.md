@@ -173,7 +173,8 @@
 
 ### 内排序
 
-![1](https://upload-images.jianshu.io/upload_images/9140378-92450e68241c6c9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+![排序复杂度](https://upload-images.jianshu.io/upload_images/9140378-92450e68241c6c9b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 |内排序|直接插入排序|二分插入排序|表插入排序|Shell插入排序|直接选择排序|
