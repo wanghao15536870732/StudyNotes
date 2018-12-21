@@ -34,9 +34,24 @@ p[i-1]== p[next[next[i-1]]] ?
 
 首先附上讲解的[博文](http://blog.csdn.net/v_july_v/article/details/7041827)地址，里面有详细讲解
 
-+ 1）算出每一个字母前缀后缀的最大公共元素长度 
++ 1）算出每一个字母前缀后缀的最大公共元素长度
 + 2）最大公共元素长度整体向后移动一个长度，最前面的元素值填 -1，即为 next 数组的第一版本
 + 3）（如果你需要的 next 数组第一个值为 -1，这步就可以省略了）next 数组的每一个值分别+1，即求得 next 数组。
+
+#### 前缀后缀的最大公共元素长度
+
++ 前缀：即从第一个字母开始往后看到最后一个字母（不包括）为止的字符串的以第一个字母开头的子串(比如 "abab" 的前缀有a,ab,aba);
++ 后缀：即从最后一个字母开始往前看到第一个字母（不包括）为止的字符串的以最后一个字符为末尾的子串(比如 "abab" 的后缀有b,ab,bab);
++ 最大公共子串长度：也就是前缀和后缀拥有的相同子串的最大长度;
+  
+  以"abab"为例：
+
+|模式串的各个子串|前缀|后缀|最大公共元素长度|
+|:--:|:--:|:--:|:--:|
+|a|空|空|0|
+|ab|a|b|0|
+|aba|a,ab|a,ba|1|
+|abab|a,ab,aba|b,ab,bab|2|
 
 ## 二、实例
 
@@ -182,3 +197,97 @@ p[i-1]== p[next[next[i-1]]] ?
 |P|a|b|a|b|a|a|a|b|a|b|a|a|
 |下标|1|2|3|4|5|6|7|8|9|10|11|12|
 |next|0|1|1|2|3|4|2|2|3|4|5|6|
+
+### (2) 对于上面的第二种解法
+
+1）算出每一个字母前缀后缀的最大公共子串长度
+
+||||||||||||||
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|P|a|b|a|b|a|a|a|b|a|b|a|a|
+|前后缀最大公共子串长度|0|0|1|2|3|1|1|2|3|4|5||
+
+2）最大公共子串长度整体向后移动一个长度，最前面的元素值填 -1，即为 next 数组的第一版本
+
+||||||||||||||
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+|P|a|b|a|b|a|a|a|b|a|b|a|a|
+|前后缀最大公共子串长度|-1|0|0|1|2|3|1|1|2|3|4|5|
+
+## 三、代码实现
+
+```c
+void getnext(seqstring *p, int next[])
+{
+    int i, j;
+    next[0] = -1;
+    i = 0; j = -1;
+    while (i < p->length)
+    {
+        if (j == -1 || p->str[i] == p->str[j])
+        {
+            ++i;
+            ++j;
+            next[i] = j;
+        }
+        else
+            j = next[j];
+    }
+    for (i = 0; i < p->length; i++)
+        printf("%d ", next[i]);
+}
+```
+
+## 四、验证
+
+```c
+#include "stdio.h"
+#include "stdlib.h"
+#define MAXSIZE 100
+
+typedef struct {
+    char str[MAXSIZE];
+    int length;
+}seqstring;
+
+void getnext(seqstring *p, int next[])
+{
+    int i, j;
+    next[0] = -1;
+    i = 0; j = -1;
+    while (i < p->length)
+    {
+        if (j == -1 || p->str[i] == p->str[j])
+        {
+            ++i;
+            ++j;
+            next[i] = j;
+        }
+        else
+            j = next[j];
+    }
+    for (i = 0; i < p->length; i++)
+        printf("%d ", next[i]);
+}
+
+int main()
+    {
+    int i, j = 0;
+    seqstring str;
+    str.length = 0;
+    printf("请输入字符串的长度：\n");
+    scanf("%d", &j);
+    getchar();
+    for (i = 0; i < j; i++)
+    {
+        scanf("%c", &str.str[i]);
+        str.length++;
+    }
+    int next[] = { 0 };
+    getnext(&str, next);
+    system("pause");
+    return 0;
+}
+```
+
+![234](https://upload-images.jianshu.io/upload_images/9140378-29049bace842092f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

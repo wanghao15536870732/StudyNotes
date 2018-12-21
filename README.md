@@ -189,7 +189,6 @@
 |是否稳定|稳定|稳定|稳定|不稳定|不稳定|
 
 
-
 + [直接插入排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%86%85%E6%8E%92%E5%BA%8F/%E7%9B%B4%E6%8E%A5%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.md)
 + [二分插入排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%86%85%E6%8E%92%E5%BA%8F/%E4%BA%8C%E5%88%86%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.md)
 + [希尔插入排序](https://github.com/wanghao15536870732/StudyNotes/blob/master/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%86%85%E6%8E%92%E5%BA%8F/%E5%B8%8C%E5%B0%94%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F.md)
