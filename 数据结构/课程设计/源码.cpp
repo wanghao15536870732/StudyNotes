@@ -1,6 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "string.h"
+
 #define M 20 /*预定最大的行号*/
 //每个字的结构体
 typedef struct node
@@ -20,6 +21,32 @@ typedef struct
     Vertexnode column[M]; //存放每一行头节点的顺序表
     int count;            //记录总行数
 } TextCompiler;           //整个文本编译器结构体
+
+
+
+//邻接表转换成数组
+void TableToArray(TextCompiler *text, char route[])
+{
+    int count = 0; //数组下标
+    for (int i = 0; i < text->count; i++)
+    {
+        int mn = 0; //邻接表的每一行数组的下标
+        while (text->column[i].FirstWord->data[mn] != '\0')
+        {
+            char letter = text->column[i].FirstWord->data[mn];
+            route[count] = letter;
+            count++; //导出数组的下标加1
+            mn++;    //邻接表的数组下标加1
+        }
+    }
+    route[count] = '\0'; //数组最后一位赋值'\0'
+}
+
+//数组Z转换成邻接表
+void ArrayToTable(char route, TextCompiler *text)
+{
+
+}
 
 void ReadFromFile(TextCompiler *text, char *filename)
 {
@@ -242,34 +269,38 @@ void nativematch(TextCompiler *text)
     scanf("%s", p);
     while (p[i])
     {
-        plength++;
-        i++;
+        plength++; //获取输入字符串的长度
+        i++;       //字符串下标向下移动
     }
-    p[plength] = '\0';
-    for (k = 0; k < text->count; k++)
+    p[plength] = '\0';                //最后一位设置为'\0'
+    for (k = 0; k < text->count; k++) //循环遍历每一行
     {
         i = 0;
-        q = text->column[k].FirstWord->length;
-        while ((i <= q - plength) && (!succ))
+        q = text->column[k].FirstWord->length; //保存一下长度
+        while (i <= q - plength)
         {
             j = 0;
             succ = 1;
-            while ((j <= plength - 1) && succ)
+            while ((j <= plength - 1) && succ) //没有匹配结束且标志位是1
             {
                 if (p[j] == text->column[k].FirstWord->data[i + j])
                     j++;
                 else
                     succ = 0;
             }
-            ++i;
+            if (text->column[k].FirstWord->data[i + j] == ' ' && text->column[k].FirstWord->data[i - 1] == ' ') //添加单词模式匹配
+                i++;
+            else
+            {
+                succ = 0; //标记为设置为0
+                i++;
+            }
+            if (succ)
+            {
+                printf("匹配成功的位置在第%d行第%d列\n", k + 1, i - 1); //输出匹配成功的行列
+                succ = 0;                                               //标志位重新设定为0
+            }
         }
-        if (succ)
-        {
-            printf("匹配成功的位置在第%d行第%d列\n", k + 1, i - 1);
-            succ = 0;
-        }
-        else
-            printf("匹配失败！！\n");
     }
 }
 
@@ -346,6 +377,21 @@ void menu()
     printf("\t\t9.退出\n");
 }
 
+//用户从界面输入文本
+void InputFromScreen()
+{
+    int row; //每一行所包含的列数
+    char input[] = "";
+    printf("请输入一行所占的列数：\n");
+    scanf("%d", &row);
+    printf("请输入你想要录入的文本：\n");
+    scanf("%s", &input);
+    for (int i = 0; i < row; i++)
+    {
+        while (fputc())
+    }
+}
+
 int main()
 {
     int input = 0;
@@ -355,7 +401,7 @@ int main()
     scanf("%d", &input);
     TextCompiler text; //定义的结构体
     text.count = 0;    //一开始的行数为0
-    while (input > 0 && input < 10)
+    while (input > 0 && input < 11)
     {
         switch (input)
         {
@@ -393,7 +439,7 @@ int main()
         }
         case 7:
         {
-
+            nativematch(&text);
             break;
         }
         case 8:
@@ -404,6 +450,13 @@ int main()
         case 9:
         {
             exit(0);
+            break;
+        }
+        case 10:
+        {
+            char letter[1000] = "";
+            TableToArray(&text, letter);
+            printf("%s\n", letter);
             break;
         }
         default:
