@@ -1,0 +1,6 @@
+﻿  ArrayText.c
+d:\vcproject\富文本编辑器2\富文本编辑器2\arraytext.c(69): warning C4013: “exit”未定义；假设外部返回 int
+d:\vcproject\富文本编辑器2\富文本编辑器2\arraytext.c(97): warning C4013: “malloc”未定义；假设外部返回 int
+  Main.cpp
+d:\vcproject\富文本编辑器2\富文本编辑器2\main.cpp(313): warning C4101: “ch”: 未引用的局部变量
+  富文本编辑器2.vcxproj -> D:\VCProject\富文本编辑器2\Debug\富文本编辑器2.exe
