@@ -28,8 +28,7 @@ void bubblesort(table *L)
                 L->r[0] = L->r[k];
                 L->r[k] = L->r[k + 1];
                 L->r[k + 1] = L->r[0];
-
-                109 done = 1;
+                done = 1;
             }
         j--;
         done = 0;
