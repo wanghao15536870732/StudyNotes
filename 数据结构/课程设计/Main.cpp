@@ -881,29 +881,20 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
             }
             else
             {
-                printf("请输入想要插入的字符串：\n");
-                scanf("%s", word.data);
-                while (word.data[word.length]) //统计字符串的长度
-                    word.length++;
-                int count; //下标标记
-                int j = 0;
-                for (int i = row; i < row + length - 1; i++)
-                {
-                    count = 0;                               //下标标记
-                    Word wordT;                              //用于插入的wordT
-                    Word *wordP = text->column[i].FirstWord; //定义word指向当前行数
-                    for (j = i * width; j < i * width + width; j++)
-                    {
-                        wordT.data[count++] = word.data[j];
-                        wordT.length = width; //长度赋值
-                    }
-                    strinsert(wordP, column, &wordT); //将分好组的
-                }
-                Word lastword;
-                lastword.length = 0;
-                while (word.data[j] != '\0')
-                    lastword.data[lastword.length++] = word.data[j++];                  //处理最后一行
-                strinsert(text->column[row + length - 1].FirstWord, column, &lastword); //插入
+                char filename11[20] = "D:\\Desktop\\Test.txt";
+                seqstring str;
+                str.length = 0;
+                printf("请输出想要插入的文本：\n");
+                getchar();
+                gets_s(str.str);
+                while (str.str[str.length])
+                    str.length++;
+                PutInFile(filename11, &str, width);
+                TextCompiler text1;
+                ReadFromFile(&text1, filename11);
+                int j;
+                for (int i = row, j = 0; i < row + length, j < length; i++, j++)
+                    strinsert(text->column[i].FirstWord, column, text1.column[j].FirstWord);
             }
             EasyOutput(text);
             break;
