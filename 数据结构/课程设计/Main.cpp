@@ -1,40 +1,40 @@
-#define _CRT_SECURE_NO_WARNINGS
-
-#include "stdlib.h"
-#include "string.h"
-#include "stdio.h"
-
 #define M 200 /*预定最大的行号*/
 //每个字的结构体
 #define MAXSIZE 2000
+#include "stdio.h"
+#include "stdlib.h"
+#include "string.h"
+
 typedef struct node
 {
-	char data[1000]; //一行字的数据域
-	int length;      // 一行字的数据域
+    char data[1000]; //一行字的数据域
+    int length;      // 一行字的数据域
 } Word;
 
 typedef struct vnode
 {
-	int row;         //储存行号
-	Word *FirstWord; //邻接表表头指针,指向每一行的第一个字
+    int row;         //储存行号
+    Word *FirstWord; //邻接表表头指针,指向每一行的第一个字
 } Vertexnode;
 
 typedef struct
 {                         //邻接表类型
-	Vertexnode column[M]; //存放每一行头节点的顺序表
-	int count;            //记录总行数
+    Vertexnode column[M]; //存放每一行头节点的顺序表
+    int count;            //记录总行数
 } TextCompiler;           //整个文本编译器结构体
 
 #define MAXSIZWE 2000
-typedef struct {
-	char str[MAXSIZWE];
-	int length;
-}seqstring;
+typedef struct
+{
+    char str[MAXSIZWE];
+    int length;
+} seqstring;
 
-typedef struct {
-	int a[MAXSIZE];
-	int top;
-}seqstack;
+typedef struct
+{
+    int a[MAXSIZE];
+    int top;
+} seqstack;
 
 //将邻接表转换成数组
 void TableToArray(TextCompiler *text, seqstring *str)
@@ -58,7 +58,6 @@ void TableToArray(TextCompiler *text, seqstring *str)
 //邻接表写入文件
 void TableToFile(TextCompiler *text, char *filename)
 {
-    char ch; //读取的字符
     FILE *fp;
     int save = 0;              //保存写入文件的返回值
     fp = fopen(filename, "w"); //以写入的方式打开文件
@@ -155,61 +154,72 @@ Word *strconcat(Word *S1, Word *S2)
 }
 
 //用S2替换S1中的i位置的字符串
-void strreplace(Word *S1, int i, Word *S2)
+void strreplace(Word *S1, int i, Word *S2, int length)
 {
-    for (int j = 0; j < S2->length; j++)
-        S1->data[i + j] = S2->data[j];
+    if (S2->length == length) //如果替换的字符串与元字符串长度相等
+    {
+        for (int j = 0; j < S2->length; j++)
+            S1->data[i + j] = S2->data[j]; //直接赋值替换
+    }
+    else if (S2->length > length) //替换字符串比原字符串要长
+    {
+
+        for (int k = S1->length - 1; k >= i - 1; k--) //Str中从第i个元素开始后移
+            S1->data[S2->length - length + k] = S1->data[k];
+        for (int j = 0; j < S2->length; j++) //赋值替换
+            S1->data[i + j] = S2->data[j];
+        S1->length += S2->length - length; //最后处理一下长度
+        S1->data[S1->length] = '\0';
+    }
+    else
+    { //替换字符串比元字符串要短
+        for (int k = i + length - 1; k < S1->length; k++)
+            S1->data[k - (length - S2->length)] = S1->data[k]; //Str中下标为i + len -1开始的元素前移
+        for (int j = 0; j < S2->length; j++)
+            S1->data[i + j] = S2->data[j];   //进行字符串的替换
+        S1->length -= (length - S2->length); //最后处理一下长度
+        S1->data[S1->length] = '\0';         //最后赋值'\0'
+    }
 }
 
 //获得每一行文本的next[]数组
-void getnext(Word *word, int next[])
+void get_next(int *n, char *b, int next[])
 {
-    int index, jndex;                 //两个下表，用于前后比较
-    next[0] = -1;                     //第一个是-1
-    index = 0, jndex = -1;            //先赋值
-    while (word->data[index] != '\0') //还没有读取到每行的最后一个数据
+    int i, j;
+    i = 0;
+    n[0] = j = -1; //指针j在最左边无法移动时让指针i后移
+    while (i < strlen(b))
     {
-        if (jndex == -1 || word->data[index] == word->data[jndex])
+        while (j != -1 && b[i] != b[j]) //当发生不匹配时,j的下一步移动位置next【j】=j
         {
-            ++index; //向后比较
-            ++jndex;
-            next[index] = jndex;
+            j = next[j];
         }
-        else
-            jndex = next[jndex]; //next数组再次嵌套查找
+        next[++i] = ++j; //当匹配成功时b[0 ~ i]=b[j-i ~ j]即next[ ++i ] = ++ j。
     }
-
-    /*
-	index = 0;
-	while (word->data[index] != '\0')
-	{
-		printf("%d ", next[index]);
-		index++;
-	}
-	*/
-
-    printf("\n");
 }
 
 //kmp字符串匹配
-int Kmp(Word *wordT, Word *wordP, int next[])
+int kmp(char *vis1, char *vis2, int next[], int length)
 {
-    int index = 0;
-    int jndex = 0;
-    while (index < wordT->length && jndex < wordP->length)
+    int i, j;
+    int ans = 0;
+    i = j = 0;            //主串和模式串的位置
+    int n = strlen(vis1); //主串长度
+    int m = strlen(vis2); //模式串长度
+    while (i < n)
     {
-        if (jndex == -1 || wordT->data[index] == wordP->data[jndex]) //如果在该位置相等
+        while (j != -1 && vis1[i] != vis2[j]) //主串与模式串发现不匹配
+            j = next[j];                      //指针j进行行回溯
+        if (j == m - 1)                       //如果匹配成功
         {
-            index++; //两个下标一起向后走
-            jndex++;
+            printf("匹配成功的位置为：第%d行,第%d列\n", (i - m) / length + 1, (i - m) % length + 2);
+            ans++;
+            j = next[j]; //j指针返回到正确位置
         }
-        else
-            jndex = next[jndex]; //否则匹配串相对于模式串向后
+        i++; //i，j指针后移寻找下一模式串
+        j++;
     }
-    if (jndex == wordP->length)
-        return index - wordP->length;
-    else
-        return -1;
+    return ans; //返回匹配的次数
 }
 
 void init(seqstack *st)
@@ -237,25 +247,26 @@ int pop(seqstack *st)
     st->top--;
     return st->a[st->top];
 }
-
+//从文本当中提取数据，利用邻接表存储
 void ReadFromFile(TextCompiler *text, char *filename)
 {
-    Word *word; //新的结点
+    text->count = 0; //每次行号赋0
+    Word *word;      //新的结点
     FILE *file;
     Word *p = NULL;
-    file = fopen(filename, "r");
-    int i = 0;
-    int j = -1;
+    file = fopen(filename, "r"); //打开文件
+    int i = 0;                   //列下标
+    int j = -1;                  //行下标
     if (file)
     {
-        word = (Word *)malloc(sizeof(Word));
-        word->length = 0; //开始赋值长度为0
+        word = (Word *)malloc(sizeof(Word)); //开辟一个新的空间
+        word->length = 0;                    //开始赋值每一行长度为0
         while ((word->data[i] = fgetc(file)) != EOF)
         {
-            if (word->data[i] == '\n') //如果读取的这个
+            if (word->data[i] == '\n') //如果读取的这个字符是'\n'
             {
-                word->data[i] = '\0';
-                j++;                                 //行数加1再赋值
+                word->data[i] = '\0';                //这句话读取结束，补上'\0'
+                j++;                                 //行数加一再赋值
                 text->column[j].FirstWord = word;    //将读取的这一行链接到表结点的后面
                 word = (Word *)malloc(sizeof(Word)); //再次开辟一个新的word
                 word->length = 0;                    //开始赋值长度为0
@@ -264,8 +275,8 @@ void ReadFromFile(TextCompiler *text, char *filename)
             }
             else
             {
-                i++;
-                word->length++;
+                i++;            //这一行还没有读取结束，下标向后继续读取
+                word->length++; //每一行的字符个数加一
             }
         }
         printf("文件数据读取成功!!!\n");
@@ -287,7 +298,7 @@ void EasyOutput(TextCompiler *text)
         printf("%s\n", text->column[i].FirstWord->data);
 }
 
-//统计整个文本中所有字母的个数
+//统计整个文本中所有字符的个数
 int TheLetterNumberOfText(TextCompiler *text)
 {
     int count = 0; //计数器
@@ -320,7 +331,7 @@ int TheWordNumberOfText(TextCompiler *text)
                  text->column[i].FirstWord->data[n] == '.' ||
                  text->column[i].FirstWord->data[n] == '!' ||
                  text->column[i].FirstWord->data[n] == '?' ||
-                 text->column[i].FirstWord->data[n] == '"'))
+                 text->column[i].FirstWord->data[n] == '\"'))
                 count++;
             n++; //数组下标移动
             m++;
@@ -328,14 +339,34 @@ int TheWordNumberOfText(TextCompiler *text)
     }
     return count;
 }
+//kmp算法匹配字符串
+void StringNumber(TextCompiler *text)
+{
+    int length = text->column[0].FirstWord->length; //保存第一行的列数
+    char vis2[MAXSIZE] = {0}, vis1[1000] = {0};
+    int next[1000] = {0};
+    int count = 0;
+    seqstring str;
+    str.length = 0;
+    TableToArray(text, &str);
+    strcpy(vis1, str.str);
+    count = 0;
+    printf("请输入想要查询的子串：\n");
+    getchar();
+    gets_s(vis2);
+    get_next(next, vis2, next);
+    count = kmp(vis1, vis2, next, length);
+    printf("\n字符串 %s 在文章中出现次数为：%d\n\n", vis2, count);
+}
+
 //检索每一行的特殊字符
 void RowNumber(TextCompiler *text)
 {
     int row = 0;
     int input = 0;
-    printf("\t1.统计指定行的空格的个数\n");
-    printf("\t2.统计指定行的字母的个数\n");
-    printf("\t3.统计指定行的标点符号的个数\n");
+    printf("\t1.统计整篇文章的空格的个数\n");
+    printf("\t2.统计整篇文章的字母的个数\n");
+    printf("\t3.统计某一字符串在文章中出现的次数\n");
     printf("\t4.统计整篇文章的字符个数\n");
     printf("\t5.统计整篇文章的单词个数\n");
     printf("请输入功能编号：\n");
@@ -344,49 +375,42 @@ void RowNumber(TextCompiler *text)
     {
     case 1:
     {
-        printf("请输入行号：\n");
-        scanf("%d", &row);
         int count = 0; //计数器
         int i = 0;     //标记下表
-        while (text->column[row - 1].FirstWord->data[i] != '\0')
+        for (int row = 0; row < text->count; row++)
         {
-            if (text->column[row - 1].FirstWord->data[i] == ' ')
-                count++;
-            i++;
+            i = 0;
+            while (text->column[row].FirstWord->data[i] != '\0')
+            {
+                if (text->column[row].FirstWord->data[i] == ' ') //判断是否为空格
+                    count++;                                     //计数器
+                i++;                                             //下标加1
+            }
         }
-        printf("第%d行文本中有%d个空格\n", row, count);
+        printf("整篇文本中有%d个空格\n", count);
         break;
     }
     case 2:
     {
-        printf("请输入行号：\n");
-        scanf("%d", &row);
         int count = 0; //计数器
         int i = 0;     //标记下表
         char letter;
-        while ((letter = text->column[row - 1].FirstWord->data[i]) != '\0')
+        for (int row = 0; row < text->count; row++)
         {
-            if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z'))
-                count++;
-            i++;
+            i = 0;
+            while ((letter = text->column[row].FirstWord->data[i]) != '\0')
+            {
+                if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z')) //判断该字符是否在这个范围之内
+                    count++;                                                              //计数器
+                i++;                                                                      //下标向后走，继续遍历
+            }
         }
-        printf("第%d行文本中有%d个字母\n", row, count);
+        printf("整篇文本中有%d个字母\n", count);
         break;
     }
     case 3:
     {
-        printf("请输入行号：\n");
-        scanf("%d", &row);
-        int count = 0; //计数器
-        int i = 0;     //标记下表
-        while (text->column[row - 1].FirstWord->data[i] != '\0')
-        {
-            char data = text->column[row - 1].FirstWord->data[i];
-            if (data == ',' || data == '.' || data == '?' || data == '"' || data == '\'')
-                count++;
-            i++;
-        }
-        printf("第%d行文本中有%d个标点符号\n", row, count);
+        StringNumber(text);
         break;
     }
     case 4:
@@ -427,7 +451,7 @@ void chinesematch(TextCompiler *text, seqstack *st) //中文查找
     char p[20] = {0};
     printf("请输入需要查找的汉字:\n");
     scanf("%s", p);
-    while (p[i])
+    while (p[i]) //统计
     {
         plength++;
         i++;
@@ -458,13 +482,17 @@ void chinesematch(TextCompiler *text, seqstack *st) //中文查找
             }
         }
     }
+    if (st->top == 0)
+        printf("匹配失败！！\n");
 }
 void englishmatch(TextCompiler *text, seqstack *st) //英文查找
 {
     int i = 0, j, k, m = 0, succ, q, plength = 0;
     char p[20] = {0};
     printf("请输入需要查找的单词:\n");
-    scanf("%s", p);
+    //scanf("%s", p);
+    getchar();
+    gets_s(p);
     while (p[i])
     {
         plength++;
@@ -486,7 +514,14 @@ void englishmatch(TextCompiler *text, seqstack *st) //英文查找
                 else
                     succ = 0;
             }
-            if (text->column[k].FirstWord->data[i + j] == ' ' && text->column[k].FirstWord->data[i - 1] == ' ')
+            if (text->column[k].FirstWord->data[i + j] == ' ' &&
+                text->column[k].FirstWord->data[i - 1] == ' ') //判断字符串两边是否为' '
+                i++;
+            else if (text->column[k].FirstWord->data[i + j] == ' ' &&
+                     k == 0) //判断整篇文章的第一个单词
+                i++;
+            else if (text->column[k].FirstWord->data[i + j] == ' ' &&
+                     text->column[k - 1].FirstWord->data[m] == '\0') //判断每行的第一个单词是否为
                 i++;
             else
             {
@@ -502,6 +537,8 @@ void englishmatch(TextCompiler *text, seqstack *st) //英文查找
             }
         }
     }
+    if (st->top == 0)
+        printf("匹配失败！！\n");
 }
 
 //朴素模式匹配
@@ -528,12 +565,10 @@ void nativematch(TextCompiler *text, seqstack *st)
 }
 
 //将数组写入文件
-void PutInFile(char *filename, seqstring *array)
+void PutInFile(char *filename, seqstring *array, int roww)
 {
     int row; //每一行所包含的列数
-    printf("请输入一行所占的列数：\n");
-    scanf("%d", &row);
-    char ch; //读取的字符
+    row = roww;
     FILE *fp;
     int save = 0; //保存写入文件的返回值
     int count = 0;
@@ -559,79 +594,148 @@ void PutInFile(char *filename, seqstring *array)
     fclose(fp);
 }
 
-void IntoFile(TextCompiler *text, char *filename)
+void IntoFile(TextCompiler *text, char *filename, int length)
 {
-    printf("删除后的字符串:\n");
-    EasyOutput(text);
-    printf("转换成数组后的文档：\n");
     seqstring strtr;
     strtr.length = 0;
     TableToArray(text, &strtr);
-    printf("%s\n", strtr.str);
-    PutInFile(filename, &strtr);
+    PutInFile(filename, &strtr, length);
 }
 
-//横向删除单词
+//删除指定子串
 void StrDelete(TextCompiler *text, char *filename)
 {
-    seqstring str;
-    str.length = 0;
-    int i = 0, j, k, m = 0, succ = 0, q, plength = 0;
-    char p[20] = {0};
-    printf("请输入想要删除的单词:\n");
-    scanf("%s", p);
-    while (p[i])
+    if (text->count == 0)
+        printf("文本数据为空！！\n");
+    else
     {
-        plength++; //获取输入字符串的长度
-        i++;       //字符串下标向下移动
-    }
-    p[plength] = '\0';                //最后一位设置为'\0'
-    for (k = 0; k < text->count; k++) //循环遍历每一行
-    {
-        i = 0;
-        q = text->column[k].FirstWord->length; //保存一下长度
-        while (i <= q - plength)
+        int length = text->column[0].FirstWord->length; //先保存第一行的长度
+        seqstring str;
+        str.length = 0;
+        int i = 0, j, k, m = 0, succ = 0, q, plength = 0;
+        char p[20] = {0};
+        printf("请输入想要删除的子字符串:\n");
+        getchar();
+        gets_s(p);
+        while (p[i])
         {
-            j = 0;
-            succ = 1;
-            while ((j <= plength - 1) && succ) //没有匹配结束且标志位是1
+            plength++; //获取输入字符串的长度
+            i++;       //字符串下标向下移动
+        }
+        p[plength] = '\0';                //最后一位设置为'\0'
+        for (k = 0; k < text->count; k++) //循环遍历每一行
+        {
+            i = 0;
+            q = text->column[k].FirstWord->length; //保存一下长度
+            while (i <= q - plength)
             {
-                if (p[j] == text->column[k].FirstWord->data[i + j])
-                    j++;
-                else
-                    succ = 0;
-            }
-            i++;
-            if (succ)
-            {
-                strdelete(text->column[k].FirstWord, i, plength); //删除该字符串
-                succ = 0;                                         //标志位重新设定为0
+                j = 0;
+                succ = 1;
+                while ((j <= plength - 1) && succ) //没有匹配结束且标志位是1
+                {
+                    if (p[j] == text->column[k].FirstWord->data[i + j])
+                        j++;
+                    else
+                        succ = 0;
+                }
+                i++;
+                if (succ)
+                {
+                    strdelete(text->column[k].FirstWord, i, plength); //删除该字符串
+                    succ = 0;                                         //标志位重新设定为0
+                }
             }
         }
+        IntoFile(text, filename, length); //转换成数组写入文件
+        ReadFromFile(text, filename);
+        printf("删除后的字符串:\n");
+        EasyOutput(text);
     }
-    //TableToArray(text, &str);  //先将邻接表转换成一维数组
-    IntoFile(text, filename); //转换成数组写入文件
+}
+
+void strdelete2(TextCompiler *text, seqstack *st, char *filename)
+{
+    int length = text->column[0].FirstWord->length;
+    char route[MAXSIZE] = {0};
+    int k, h = 0, l = 0, r = 0, z, d, i, q = 0, c = 0;
+    printf("请输入要查找并删除的单词：\n");
+    nativematch(text, st);
+    printf("请输入要删除的单词所在的位置：\n");
+    printf("行号：");
+    scanf("%d", &h);
+    printf("列号：");
+    scanf("%d", &l);
+    int count = 0; //数组下标
+    for (i = 0; i < h - 1; i++)
+    {
+        int k = 0; //邻接表的每一行数组的下标
+        while (text->column[i].FirstWord->data[k] != '\0')
+        {
+            char letter = text->column[i].FirstWord->data[k];
+            route[count] = letter;
+            count++; //导出数组的下标加1
+            k++;     //邻接表的数组下标加1
+        }
+        r = r + k;
+        //printf("第%d行有%d个元素:",i+1,r);
+    }
+    z = r + l; //z为删除的起始位置
+    count = 0;
+    for (i = 0; i < text->count; i++)
+    {
+        int mn = 0; //邻接表的每一行数组的下标
+        while (text->column[i].FirstWord->data[mn] != '\0')
+        {
+            char letter = text->column[i].FirstWord->data[mn];
+            route[count] = letter;
+            count++; //导出数组的下标加1
+            mn++;    //邻接表的数组下标加1
+        }
+    }
+    route[count] = '\0'; //数组最后一位赋值'\0'
+    if (z < 1)
+        printf("cannot delete\n");
+    else
+    {
+        for (d = r + q + l; d < c; d++)
+            route[d - q] = route[d]; //q为删除的单词的长度
+        count = count - q;
+        route[count] = '\0';
+    }
+    printf("删除后的字符串为：\n");
+    for (int j = 0; j < count / length; j++)
+    {
+        for (int i = j * length; i < j * length + length; i++)
+            printf("%c", route[i]);
+        printf("\n");
+    }
 }
 
 //行字符串替换
-void StrReplace(TextCompiler *text)
+void StrReplace(TextCompiler *text, char *filename)
 {
+    int length = text->column[0].FirstWord->length;
     Word word;
+    word.length = 0;
     seqstring str;
     str.length = 0;
     int i = 0, j, k, m = 0, succ = 0, q, plength = 0;
     char p[20] = {0};
     printf("请输入想要被替换的字符串:\n");
-    scanf("%s", p);
+    getchar();
+    gets_s(p);
     printf("请输入想要替换的字符串：\n");
-    scanf("%s", word.data);
+    //getchar();
+    gets_s(word.data);
+    //scanf("%s", word.data);
     while (p[i])
     {
         plength++; //获取输入字符串的长度
         i++;       //字符串下标向下移动
     }
     p[plength] = '\0'; //最后一位设置为'\0'
-    word.length = plength;
+    while (word.data[word.length])
+        word.length++;
     for (k = 0; k < text->count; k++) //循环遍历每一行
     {
         i = 0;
@@ -650,12 +754,14 @@ void StrReplace(TextCompiler *text)
             i++;
             if (succ)
             {
-                strreplace(text->column[k].FirstWord, i - 1, &word); //替换该字符串
-                succ = 0;                                            //标志位重新设定为0
+                strreplace(text->column[k].FirstWord, i - 1, &word, plength); //替换该字符串
+                succ = 0;                                                     //标志位重新设定为0
             }
         }
     }
-    printf("替换后的字符串:\n");
+    printf("替换后的文本：\n");
+    IntoFile(text, filename, length);
+    ReadFromFile(text, filename);
     EasyOutput(text);
 }
 
@@ -672,38 +778,20 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
     printf("\t2.字符串替换\n");
     printf("\t3.字符串插入\n");
     printf("\t4.字符串删除\n");
-    printf("\t5.朴素查找\n");
     printf("请输入功能编号：\n");
     scanf("%d", &input);
-    int i;
-    int next[50];
     switch (input)
     {
     case 1:
     {
-        int temp = 0; //储存查询成功的列下标
-        Word rd;
-        printf("请输入想要查询的子串：\n");
-        scanf("%s", rd.data);
-        int j = 0;
-        for (i = 0; i < text->count; i++)
-        {
-            //获取每一行字符的next值
-            getnext(text->column[i].FirstWord, next);
-            if (temp = Kmp(text->column[i].FirstWord, &rd, next) != -1)
-            {
-                printf("匹配成功！！\n");
-                printf("匹配位置为文本第%d行第%d列：\n", i + 1, temp);
-                break;
-            }
-        }
-        if (i == text->count)
-            printf("匹配失败！！\n");
+        seqstack st;
+        init(&st);
+        nativematch(text, &st);
         break;
     }
     case 2:
     {
-        StrReplace(text);
+        StrReplace(text, filename);
         break;
     }
     case 3:
@@ -722,16 +810,21 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
             Word word;
             word.length = 0;
             int row = 0, column = 0; //定义行跟列
+            int length = text->column[0].FirstWord->length;
             printf("请输出想要插入的位置：(行跟列)\n");
             printf("行号：");
             scanf("%d", &row);
             printf("列号：");
             scanf("%d", &column);
             printf("请输入想要插入的字符串：\n");
-            scanf("%s", word.data);
+            getchar();
+            gets_s(word.data);
             while (word.data[word.length])
                 word.length++;
             strinsert(text->column[row - 1].FirstWord, column, &word);
+            IntoFile(text, filename, length);
+            ReadFromFile(text, filename);
+            printf("\n\n在第%d行%d列 横向 添加%s的字符串后的文本为：\n\n", row, column, word.data);
             EasyOutput(text);
             break;
         }
@@ -740,6 +833,7 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
             int dlength = 0;
             int col = 0;
             char data[100] = {0};
+            int length = text->column[0].FirstWord->length;
             int row = 0, column = 0; //定义行跟列
             printf("请输出想要插入的位置：(行跟列)\n");
             printf("行号：");
@@ -760,7 +854,9 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
                 word->length++;
                 word->data[word->length] = '\0';
             }
+            printf("\n\n在第%d行%d列 列向 添加%s的字符串后的文本为：\n\n", row, column, data);
             EasyOutput(text);
+            IntoFile(text, filename, length);
             break;
         }
         case 3:
@@ -789,22 +885,24 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
                 scanf("%s", word.data);
                 while (word.data[word.length]) //统计字符串的长度
                     word.length++;
-                int count = 0; //下标标记
+                int count; //下标标记
+                int j = 0;
                 for (int i = row; i < row + length - 1; i++)
                 {
+                    count = 0;                               //下标标记
                     Word wordT;                              //用于插入的wordT
                     Word *wordP = text->column[i].FirstWord; //定义word指向当前行数
-                    for (int j = i * width; j < i * width + width; j++)
+                    for (j = i * width; j < i * width + width; j++)
                     {
-                        wordT.data[j] = word.data[count++];
+                        wordT.data[count++] = word.data[j];
                         wordT.length = width; //长度赋值
                     }
                     strinsert(wordP, column, &wordT); //将分好组的
                 }
                 Word lastword;
                 lastword.length = 0;
-                while (word.data[count] != '\0')
-                    lastword.data[lastword.length++] = word.data[count++];              //处理最后一行
+                while (word.data[j] != '\0')
+                    lastword.data[lastword.length++] = word.data[j++];                  //处理最后一行
                 strinsert(text->column[row + length - 1].FirstWord, column, &lastword); //插入
             }
             EasyOutput(text);
@@ -832,7 +930,7 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
             break;
         }
         case 2:
-        {
+        { //字符串列删除
             int column = 0;
             printf("请输入想要删除的列号：\n");
             scanf("%d", &column);
@@ -844,6 +942,7 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
         {
             int row = 0, column = 0;
             int width = 0, length = 0;
+            int lengthh = text->column[0].FirstWord->length; //保存文本第一行的长度
             printf("请输入想要删除块的行号、列号、宽度、长度：\n");
             printf("行号：");
             scanf("%d", &row);
@@ -853,9 +952,14 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
             scanf("%d", &width);
             printf("宽度：");
             scanf("%d", &length);
+            if (row + length > text->count || column + width > text->column[0].FirstWord->length)
+            {
+                printf("块的面积过大,请重新输出！！\n");
+                exit(0);
+            }
             for (int i = row - 1; i < row + length; i++)
                 strdelete(text->column[i].FirstWord, column, length);
-            IntoFile(text, filename);
+            IntoFile(text, filename, length);
             break;
         }
         default:
@@ -868,11 +972,6 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
         EasyOutput(text); //简单输出
         break;
     }
-    case 5:
-    {
-        nativematch(text, st);
-        break;
-    }
     default:
         printf("输入有误！\n");
         exit(0);
@@ -882,70 +981,76 @@ void SearchReplaceDelete(TextCompiler *text, seqstack *st, char *filename)
 
 void strRemove(TextCompiler *text, char *filename)
 {
-    int input = 0;
-    printf("\t1.字符串的行移动\n");
-    printf("\t2.字符串的列移动\n");
-    printf("\t3.字符串的块移动\n");
-    printf("请输入操作编号：\n");
-    scanf("%d", &input);
-    switch (input)
+    if (text->count == 0)
+        printf("文档为空，请重试！\n");
+    else
     {
-    case 1:
-    {
-        int row1 = 0; //移动前的列位置
-        int row2 = 0; //移动前的
-        printf("请输入想要移动行的位置：\n");
-        scanf("%d", &row1);
-        printf("请输入想要移动到的位置：\n");
-        scanf("%d", &row2);
-        Word *word = text->column[row1 - 1].FirstWord; //保存一下
-        text->column[row1 - 1].FirstWord = text->column[row2 - 1].FirstWord;
-        text->column[row2 - 1].FirstWord = word;
-        printf("行移动后的文本:\n");
-        EasyOutput(text);            //简单输出
-        TableToFile(text, filename); //写入文件
-        break;
-    }
-    case 2:
-    {
-        int column1 = 0; //移动前的列位置
-        int column2 = 0; //移动前的
-        printf("请输入想要移动列的位置：\n");
-        scanf("%d", &column1);
-        printf("请输入想要移动列的位置：\n");
-        scanf("%d", &column2);
-        for (int i = 0; i < text->count; i++)
+        int input = 0;
+        printf("\t1.字符串的行移动\n");
+        printf("\t2.字符串的列移动\n");
+        printf("\t3.字符串的块移动\n");
+        printf("请输入操作编号：\n");
+        scanf("%d", &input);
+        switch (input)
         {
-            char temp; //中间交换物
-            temp = text->column[i].FirstWord->data[column1 - 1];
-            text->column[i].FirstWord->data[column1 - 1] = text->column[i].FirstWord->data[column2 - 1];
-            text->column[i].FirstWord->data[column2 - 1] = temp;
+        case 1:
+        {                 //字符串的行移动
+            int row1 = 0; //移动前的列位置
+            int row2 = 0; //移动前的
+            printf("请输入想要移动行的位置：\n");
+            scanf("%d", &row1);
+            printf("请输入想要移动到的位置：\n");
+            scanf("%d", &row2);
+            Word *word = text->column[row1 - 1].FirstWord; //保存最后想要交换的那一行
+            for (int i = row1; i < row2; i++)
+                text->column[i - 1].FirstWord = text->column[i].FirstWord;
+            text->column[row2 - 1].FirstWord = word;
+            printf("行移动后的文本:\n");
+            EasyOutput(text);            //简单输出
+            TableToFile(text, filename); //写入文件
+            break;
         }
-        printf("列移动后的文本:\n");
-        EasyOutput(text);            //简单输出
-        TableToFile(text, filename); //写入文件
-        break;
-    }
-    case 3:
-    {
+        case 2:
+        {                    //字符串的列移动
+            int column1 = 0; //移动前的列位置
+            int column2 = 0; //移动前的
+            printf("请输入想要移动列的位置：\n");
+            scanf("%d", &column1);
+            printf("请输入想要移动列的位置：\n");
+            scanf("%d", &column2);
+            for (int i = 0; i < text->count; i++)
+            {
+                char temp; //中间交换物
+                temp = text->column[i].FirstWord->data[column1 - 1];
+                text->column[i].FirstWord->data[column1 - 1] = text->column[i].FirstWord->data[column2 - 1];
+                text->column[i].FirstWord->data[column2 - 1] = temp;
+            }
+            printf("列移动后的文本:\n");
+            EasyOutput(text);            //简单输出
+            TableToFile(text, filename); //写入文件
+            break;
+        }
+        case 3:
+        {
 
-        break;
-    }
-    default:
-        break;
+            break;
+        }
+        default:
+            break;
+        }
     }
 }
 
 void menu()
 {
     puts("\n");
-    printf("\t                        简易文本编辑器                 \n");
+    printf("\t                        简易文本编辑器                    \n");
     printf("\t*\t                                                      *\n");
     printf("\t*\t 1.输入文本数据                                       *\n");
     printf("\t*\t 2.从文件读取数据                                     *\n");
     printf("\t*\t 3.整体输出文本                                       *\n");
-    printf("\t*\t 4.统计文本中的字符个数                               *\n");
-    printf("\t*\t 5.删除子串                                           *\n");
+    printf("\t*\t 4.统计文章中英文字母、空格、总字数                   *\n");
+    printf("\t*\t 5.删除某一子串                                       *\n");
     printf("\t*\t 6.查找、替换、插入字符串                             *\n");
     printf("\t*\t 7.字符串的移动                                       *\n");
     printf("\t*\t 8.检索某个单词的行号和在该行出现的次数以及位置       *\n");
@@ -953,12 +1058,12 @@ void menu()
     printf("\t*\t 10.退出                                              *\n");
 }
 
-//用户从界面输入文本
-void InputFromScreen(char *filename) //abcdefghiklmnopqrst
+//用户从界面输入文本写入到文件
+void InputFromScreen(char *filename)
 {
-    int row; //每一行所包含的列数
+    int column; //每一行所包含的列数
     printf("请输入一行所占的列数：\n");
-    scanf("%d", &row);
+    scanf("%d", &column);
     printf("请输入你想要录入的文本：\n");
     char ch; //读取的字符
     FILE *fp;
@@ -978,10 +1083,11 @@ void InputFromScreen(char *filename) //abcdefghiklmnopqrst
                 printf("写入文件失败！！！\n");
                 exit(0); //退出
             }
-            ch = getchar();
-            if (count % row == 0)
+            ch = getchar(); //继续向后读取数据
+            if (count % column == 0)
                 fputc('\n', fp); //写入回车已达到按照用户的方式存储文本
         }
+        printf("数据录入成功！！\n");
     }
     else
         printf("文件打开失败！！\n");
@@ -994,13 +1100,13 @@ int main()
     seqstack st;
     init(&st);
     menu();
-    char filename[] = "D:\\Desktop\\Test.txt";
+    //char filename[] = "D:\\Desktop\\Test.txt";
     char filename1[] = "D:\\Desktop\\Test2.txt";
     printf("请输出功能编号：\n");
     scanf("%d", &input);
-    TextCompiler text; //定义的结构体
+    TextCompiler text; //定义一个text
     text.count = 0;    //一开始的行数为0
-    while (input >= 0 && input <= 10)
+    while (input >= 1 && input <= 10)
     {
         switch (input)
         {
@@ -1019,6 +1125,7 @@ int main()
         }
         case 3:
         {
+            printf("整个文本为：\n");
             EasyOutput(&text);
             break;
         }
@@ -1030,6 +1137,7 @@ int main()
         case 5:
         {
             StrDelete(&text, filename1);
+            //strdelete2(&text, &st, filename1);
             break;
         }
         case 6:
@@ -1048,8 +1156,15 @@ int main()
             break;
         }
         case 9:
-        {
-            printf("总行数为:%d\n", text.count);
+        {                        //输出整个文本的行数
+            if (text.count == 0) //行数为0
+            {
+                printf("读取文本为空！请重试！\n");
+                exit(0); //退出
+            }
+            else
+                printf("总行数为:%d\n", text.count);
+            break;
         }
         case 10:
         {
