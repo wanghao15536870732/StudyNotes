@@ -25,7 +25,6 @@ void TableToArray(TextCompiler *text, seqstring *str)
 //邻接表写入文件
 void TableToFile(TextCompiler *text, char *filename)
 {
-	char ch; //读取的字符
 	FILE *fp;
 	int save = 0;			   //保存写入文件的返回值
 	fp = fopen(filename, "w"); //以写入的方式打开文件
@@ -122,59 +121,70 @@ Word *strconcat(Word *S1, Word *S2)
 }
 
 //用S2替换S1中的i位置的字符串
-void strreplace(Word *S1, int i, Word *S2)
+void strreplace(Word *S1, int i, Word *S2, int length)
 {
-	for (int j = 0; j < S2->length; j++)
-		S1->data[i + j] = S2->data[j];
+	if (S2->length == length) //如果替换的字符串与元字符串长度相等
+	{
+		for (int j = 0; j < S2->length; j++)
+			S1->data[i + j] = S2->data[j]; //直接赋值替换
+	}
+	else if (S2->length > length) //替换字符串比原字符串要长
+	{
+
+		for (int k = S1->length - 1; k >= i - 1; k--) //Str中从第i个元素开始后移
+			S1->data[S2->length - length + k] = S1->data[k];
+		for (int j = 0; j < S2->length; j++) //赋值替换
+			S1->data[i + j] = S2->data[j];
+		S1->length += S2->length - length; //最后处理一下长度
+		S1->data[S1->length] = '\0';
+	}
+	else
+	{ //替换字符串比元字符串要短
+		for (int k = i + length - 1; k < S1->length; k++)
+			S1->data[k - (length - S2->length)] = S1->data[k]; //Str中下标为i + len -1开始的元素前移
+		for (int j = 0; j < S2->length; j++)
+			S1->data[i + j] = S2->data[j];   //进行字符串的替换
+		S1->length -= (length - S2->length); //最后处理一下长度
+		S1->data[S1->length] = '\0';		 //最后赋值'\0'
+	}
 }
 
 //获得每一行文本的next[]数组
-void getnext(Word *word, int next[])
+void get_next(int *n, char *b, int next[])
 {
-	int index, jndex;				  //两个下表，用于前后比较
-	next[0] = -1;					  //第一个是-1
-	index = 0, jndex = -1;			  //先赋值
-	while (word->data[index] != '\0') //还没有读取到每行的最后一个数据
+	int i, j;
+	i = 0;
+	n[0] = j = -1; //指针j在最左边无法移动时让指针i后移
+	while (i < strlen(b))
 	{
-		if (jndex == -1 || word->data[index] == word->data[jndex])
+		while (j != -1 && b[i] != b[j]) //当发生不匹配时,j的下一步移动位置next【j】=j
 		{
-			++index; //向后比较
-			++jndex;
-			next[index] = jndex;
+			j = next[j];
 		}
-		else
-			jndex = next[jndex]; //next数组再次嵌套查找
+		next[++i] = ++j; //当匹配成功时b[0 ~ i]=b[j-i ~ j]即next[ ++i ] = ++ j。
 	}
-
-	/*
-	index = 0;
-	while (word->data[index] != '\0')
-	{
-		printf("%d ", next[index]);
-		index++;
-	}
-	*/
-
-	printf("\n");
 }
 
 //kmp字符串匹配
-int Kmp(Word *wordT, Word *wordP, int next[])
+int kmp(char *vis1, char *vis2, int next[], int length)
 {
-	int index = 0;
-	int jndex = 0;
-	while (index < wordT->length && jndex < wordP->length)
+	int i, j;
+	int ans = 0;
+	i = j = 0;			  //主串和模式串的位置
+	int n = strlen(vis1); //主串长度
+	int m = strlen(vis2); //模式串长度
+	while (i < n)
 	{
-		if (jndex == -1 || wordT->data[index] == wordP->data[jndex]) //如果在该位置相等
+		while (j != -1 && vis1[i] != vis2[j]) //主串与模式串发现不匹配
+			j = next[j];					  //指针j进行行回溯
+		if (j == m - 1)						  //如果匹配成功
 		{
-			index++; //两个下标一起向后走
-			jndex++;
+			printf("匹配成功的位置为：第%d行,第%d列\n", (i - m) / length + 1, (i - m) % length + 2);
+			ans++;
+			j = next[j]; //j指针返回到正确位置
 		}
-		else
-			jndex = next[jndex]; //否则匹配串相对于模式串向后
+		i++; //i，j指针后移寻找下一模式串
+		j++;
 	}
-	if (jndex == wordP->length)
-		return index - wordP->length;
-	else
-		return -1;
+	return ans; //返回匹配的次数
 }
