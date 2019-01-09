@@ -260,7 +260,7 @@ public class EmpDAOImpl implements IEmpDAO {// 实现IEmpDAO接口
         if (rs.next()) {								// COUNT()统计一定会返回结果
            return rs.getInt(1) ;							// 返回读取的第一列数据
         }
-        return 0;									// 如果没有数据返回0 
+        return 0;									// 如果没有数据返回0
     }
 }
 
