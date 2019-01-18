@@ -150,3 +150,43 @@ int main(int argc, int argv)
 
 ## 5.调用摄像头采集图像
 
+```c++
+#include <iostream>
+#include <opencv2/opencv.hpp>
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include <stdlib.h>
+#include <stdio.h>
+
+using namespace std;
+using namespace cv;
+
+
+int main(int argc, int argv)
+{
+    //【1】从摄像头读入视频
+    VideoCapture capture(0);
+    Mat edges;
+
+    //【2】循环显示每一帧
+    while (1)
+    {
+        //【1】读入图像
+        Mat frame; //定义一个Mat变量，用于储存每一帧的图像
+        capture >> frame;  //读取当前帧
+
+        //【2】将原图像转换为灰度图
+        cvtColor(frame,edges,COLOR_BGR2GRAY);  //转化RGB彩色图为灰度图
+
+        //【3】使用3×3内核来降噪(2×3+1=7)
+        blur(edges, edges, Size(7, 7));
+
+        //【4】进行canny边缘检测并显示
+        Canny(edges, edges, 0, 30, 3);
+
+        imshow("被canny后的视频",edges); //显示当前帧
+        if (waitKey(30) >= 0) break;  //延时30秒
+    }
+    return 0;
+}
+```
