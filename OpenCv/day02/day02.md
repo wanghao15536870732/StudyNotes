@@ -110,11 +110,11 @@ bool imwrite(const string& filename,InputArray img,const vector<int>& params=vec
 
 ## 滑动条的创建和使用
 
-`创建滑动条：createTrackbar()函数`
+### `创建滑动条：createTrackbar()函数`
 
 createTrackbar()函数用于创建一个可以调整数值的滑动条。
 
-`函数原型`
+#### `函数原型`
 
 int createtrackbar(conststring& trackbarname,conststring& winname，int value,int count,TrackbarCallback onChange=0,void* userdata = 0);
 
@@ -124,3 +124,15 @@ int createtrackbar(conststring& trackbarname,conststring& winname，int value,in
 + 第四个窗口：int 类型的count,表示滑块可以到达的最大位置的值。
 + 第五个参数：TrackbarCallback类型的onChange,每次滑块位置改变时，这个函数都会进行回调。
 + 第六个参数，void* 类型的userdata,这个参数是用户传给回调函数的数据，用来处理轨迹条事件。
+
+### `获取当前Trackbar的位置`
+
+函数原型
+
+```c++
+int getTrackbarPos(conststring& trackname,conststring& winname);
+```
+
++ 第一个参数：轨迹条的名字
++ 第二个参数：轨迹条的父窗口的名字
+

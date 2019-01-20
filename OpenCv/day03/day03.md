@@ -1,0 +1,66 @@
+# Cv day03
+
+## 鼠标操作
+
+> 类似于滑动条的映射方式，都是通过回调函数来实现的
+
+> 创建和指定滑动条回调函数的函数为 createTrackbar
+
+> 指定鼠标操作的回到函数为SetMouseCallback
+
+函数原型
+
+```c++
+void setMouseCallback(sonststring& winname,MouseCallback onMouse,void *serdata = 0);
+```
+
++ 第一个参数：窗口的名字。
++ 第二个参数：指定窗口里每次鼠标事件发生的时候，被调用的指针。
++ 第三个参数：userdata,用户定义的传递到回调函数的参数。
+
+```c++
+//鼠标回调函数
+void on_MouseHandle(int event, int x, int y, int flags, void* param)
+{
+    Mat& image = *(cv::Mat*) param;
+    switch (event)
+    {
+    //鼠标移动消息
+    case EVENT_MOUSEMOVE: break;
+
+    //左键按下消息
+    case EVENT_LBUTTONDOWN: break;
+
+    //左键弹起函数
+    case EVENT_LBUTTONUP: break;
+    default:
+        break;
+    }
+}
+int main()
+{
+    //【1】准备参数
+    g_rectangle = Rect(-1, -1, 0, 0);
+    Mat srcImage(600, 800, CV_8UC3), tempImage;
+    srcImage.copyTo(tempImage);
+    g_rectangle = Rect(-1, -1, 0, 0);
+    srcImage = Scalar::all(0);
+
+    //【2】设置鼠标操作回调参数
+    namedWindow(WINDOW_NAME);
+    setMouseCallback(WINDOW_NAME, on_MouseHandle, (void *)&srcImage);
+
+    //【3】程序主循环
+    //当进行绘制的图标为真是，进行绘制
+    while (1)
+    {
+        srcImage.copyTo(tempImage);//复制源图到临时变量
+        if (g_bDrawingBox)
+        DrawReatangle(tempImage, g_rectangle); //当进行绘制的图标为真是，进行绘制
+        imshow(WINDOW_NAME, tempImage);
+    }
+    return 0;
+}
+```
+
+![5ng](https://upload-images.jianshu.io/upload_images/9140378-ba91cef006a49fd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/440)
