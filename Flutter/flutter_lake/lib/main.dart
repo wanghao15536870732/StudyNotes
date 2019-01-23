@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_lake/CircleFloatingMenu/circle_floating_menu_page.dart';
 import 'package:flutter_lake/FlutterLake/flutter_lake.dart';
+import 'package:flutter_lake/FlutterWeather/weather.dart';
 import 'package:flutter_lake/test.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
           UIRoute.circleFloatingMenu:(_) => FloatingMenuPage(),
           UIRoute.flutterLake:(_) => FlutterLake(),
           UIRoute.flutterTest:(_) => SampleApp(),
+          UIRoute.flutterWeather:(_) => Weather(),
         },
       ),
     );
@@ -175,5 +177,10 @@ final List<_MenuData> menus = [
     title: 'FlutterTest',
     icon: Icons.book,
     routeName: UIRoute.flutterTest,
+  ),
+  const _MenuData(
+    title:'FlutterWeather',
+    icon: Icons.ac_unit,
+    routeName: UIRoute.flutterWeather,
   )
 ];

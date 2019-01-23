@@ -5,4 +5,6 @@ abstract class UIRoute{
   static const String flutterLake = 'flutter_lake';
   //new test
   static const String flutterTest = 'flutter_test';
+  //天气
+  static const String flutterWeather = 'flutter_weather';
 }
