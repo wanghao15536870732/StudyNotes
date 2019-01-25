@@ -190,3 +190,5 @@ int main(int argc, int argv)
     return 0;
 }
 ```
+
+> 参考自@毛星云的《OpenCV3编程入门》
