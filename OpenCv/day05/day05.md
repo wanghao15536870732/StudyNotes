@@ -20,8 +20,8 @@ typedef Point_<float>
 
 ## Scalar类
 
-> 
+> Scalar()表示具有4个元素的数组，
 
 ```c
-Scalar(a,b,c);
+Scalar(a,b,c); //定义的RGB的颜色值：红色分量为c,绿色分量为b，蓝色分量为a
 ```

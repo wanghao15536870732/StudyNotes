@@ -24,25 +24,20 @@ int match_kouhao(char c[]);
 
 int main()
 {
-	sequence_stack Stu;
-	init(&Stu);
-	for(int i = 0; i < 10;i ++)
-		push(&Stu,i);
-	for(int i = 0;i < 10;i ++)
-	{
-		printf("%d",read(Stu));
-		pop(&Stu);
-	}
-	char c1[] = "{}[#";
-	char c2[] = "{}[]()#";
-	if(match_kouhao(c1))
-		printf("\n\nÀ¨ºÅÆ¥Åä³É¹¦£¡\n");
+	char c1[100];
+	printf("ÊäÈëc1(µÚÒ»¸ö±ØÐëÊÇ'#'):");
+	scanf("%s", c1);
+	char c2[100];
+	printf("ÊäÈëc2(µÚÒ»¸ö±ØÐëÊÇ'#'):");
+	scanf("%s", c2);
+	if (match_kouhao(c1))
+		printf("\n\nc1 À¨ºÅÆ¥Åä³É¹¦£¡\n");
 	else
-		printf("\n\nÀ¨ºÅÆ¥ÅäÊ§°Ü£¡\n"); 
-	if(match_kouhao(c2))
-		printf("\n\nÀ¨ºÅÆ¥Åä³É¹¦£¡\n");
+		printf("\n\nc1 À¨ºÅÆ¥ÅäÊ§°Ü£¡\n");
+	if (match_kouhao(c2))
+		printf("\n\nc2 À¨ºÅÆ¥Åä³É¹¦£¡\n");
 	else
-		printf("\n\nÀ¨ºÅÆ¥ÅäÊ§°Ü£¡\n"); 
+		printf("\n\nc2 À¨ºÅÆ¥ÅäÊ§°Ü£¡\n");
 	return 0;
 }
 
