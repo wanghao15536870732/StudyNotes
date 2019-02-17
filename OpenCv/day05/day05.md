@@ -25,3 +25,5 @@ typedef Point_<float>
 ```c
 Scalar(a,b,c); //定义的RGB的颜色值：红色分量为c,绿色分量为b，蓝色分量为a
 ```
+
+
