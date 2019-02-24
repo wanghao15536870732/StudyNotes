@@ -3,8 +3,6 @@ import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lake/FlutterWeather/CityWidget.dart';
-import 'package:flutter_lake/FlutterWeather/WeatherData.dart';
-import 'package:flutter_lake/FlutterWeather/WeatherWidget.dart';
 
 void main(){
   setCustomErrorPage();
@@ -19,7 +17,6 @@ void setCustomErrorPage(){
     );
   };
 }
-
 
 class Weather extends StatelessWidget{
 

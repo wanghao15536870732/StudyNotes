@@ -23,15 +23,21 @@ class CityState extends State<CityWidget>{
     _getCityList(); //获取城市列表
   }
 
-  void _getCityList() async{
-    List<CityData> citys = await _fetchCityList();
+  void _getCityList() async{  //async关键字声明该函数内部有代码需要延迟执行
+    List<CityData> citys = await _fetchCityList();  //await关键字声明运算为延迟执行，然后return运算结果
     setState(() {
       cityList = citys;
     });
   }
 
-  Future<List<CityData>> _fetchCityList() async{
-    final response = await http.get('https://search.heweather.net/top?group=cn&key=551f547c64b24816acfed8471215cd0e');
+  /*
+  Future就是event，很多Flutter内置的组件比如Http（http请求控件）的get函数、
+  RefreshIndicator（下拉手势刷新控件）的onRefresh函数都是event。
+  每一个被await标记的句柄也是一个event，每创建一个Future就会把这个Future扔进event queue中排队等候安检
+  * */
+
+  Future<List<CityData>> _fetchCityList() async{  //有await标记的运算，其结果值都是一个Future对象，
+    final response = await http.get('https://search.heweather.net/top?group=cn&number=50&key=551f547c64b24816acfed8471215cd0e');
 
     List<CityData> cityList = new List<CityData>();
 
@@ -56,8 +62,8 @@ class CityState extends State<CityWidget>{
         return ListTile(
           title: GestureDetector(
             child: Text(cityList[index].cityName),
-            onTap: (){
-              Navigator.push(
+            onTap: (){  //List的Item
+              Navigator.push( //相当于Android里面得Intent
                   context,
                   MaterialPageRoute(builder: (context) => WeatherWidget(cityList[index].cityName)),
               );

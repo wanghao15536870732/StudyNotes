@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_lake/CircleFloatingMenu/circle_floating_menu_page.dart';
 import 'package:flutter_lake/FlutterLake/flutter_lake.dart';
 import 'package:flutter_lake/FlutterWeather/weather.dart';
-import 'package:flutter_lake/test.dart';
+import 'package:flutter_lake/FlutterWord/word.dart';
 import 'package:oktoast/oktoast.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_lake/route.dart';
@@ -21,9 +21,9 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Fluter UI',
         theme: ThemeData(
-          primarySwatch: Colors.pink,
+          primarySwatch: Colors.blue,
         ),
-        home: MyHomePage(title: 'Flutter UI',),
+        home: MyHomePage(title: 'Flutter Demo',),
         localizationsDelegates: [
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
         routes: {
           UIRoute.circleFloatingMenu:(_) => FloatingMenuPage(),
           UIRoute.flutterLake:(_) => FlutterLake(),
-          UIRoute.flutterTest:(_) => SampleApp(),
+          UIRoute.flutterWord:(_) => Word(),
           UIRoute.flutterWeather:(_) => Weather(),
         },
       ),
@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
                 colors: [
-                  Colors.pinkAccent,
+                  Colors.blueAccent,
                   Colors.white,
                 ],
               )
@@ -86,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
               end: Alignment.bottomRight,
               colors: [
                 Colors.white,
-                Colors.pinkAccent,
+                Colors.blueAccent,
               ],
             ),
           ),
@@ -174,9 +174,9 @@ final List<_MenuData> menus = [
     routeName: UIRoute.flutterLake,
   ),
   const _MenuData(
-    title: 'FlutterTest',
-    icon: Icons.book,
-    routeName: UIRoute.flutterTest,
+    title: 'FlutterWord',
+    icon: Icons.language,
+    routeName: UIRoute.flutterWord,
   ),
   const _MenuData(
     title:'FlutterWeather',
