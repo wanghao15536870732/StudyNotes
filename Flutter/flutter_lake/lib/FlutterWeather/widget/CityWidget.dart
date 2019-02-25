@@ -2,11 +2,12 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_lake/FlutterWeather/CityData.dart';
-import 'package:flutter_lake/FlutterWeather/WeatherWidget.dart';
+import 'package:flutter_lake/FlutterWeather/data/CityData.dart';
+import 'package:flutter_lake/FlutterWeather/widget/WeatherWidget.dart';
 import 'package:http/http.dart' as http;
 
 class CityWidget extends StatefulWidget{
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -16,6 +17,7 @@ class CityWidget extends StatefulWidget{
 
 class CityState extends State<CityWidget>{
 
+  final _saved = new Set<CityData>();
   //列表显示
   List<CityData> cityList = new List<CityData>();
 
@@ -54,23 +56,45 @@ class CityState extends State<CityWidget>{
     }
   }
 
+  Widget _buildRow(CityData citydata,int index){
+    final alreadySaved = _saved.contains(citydata);
+    return new ListTile(
+      title: GestureDetector(
+        child: Text(cityList[index].cityName),
+        onTap: (){  //List的Item
+          Navigator.push( //相当于Android里面得Intent
+            context,
+            MaterialPageRoute(builder: (context) => WeatherWidget(cityList[index].cityName)),
+          );
+        },
+      ),
+      trailing: new Icon(
+        alreadySaved ? Icons.add_circle : Icons.add_circle_outline,
+        color: alreadySaved ? Colors.red : null,
+      ),
+      onTap: (){
+        setState(() {  //当图标被点击时，函数调用setState()会为State对象触发build()方法，从而导致对UI的更新
+          if(alreadySaved){  //如果单词条目已经添加到收藏夹中
+            _saved.remove(citydata);  //再次点击它将其从收藏夹中删除
+          }else{
+            _saved.add(citydata);
+          }
+        });
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: cityList.length,
       itemBuilder: (context,index){
-        return ListTile(
-          title: GestureDetector(
-            child: Text(cityList[index].cityName),
-            onTap: (){  //List的Item
-              Navigator.push( //相当于Android里面得Intent
-                  context,
-                  MaterialPageRoute(builder: (context) => WeatherWidget(cityList[index].cityName)),
-              );
-            },
-          ),
-        );
+        return _buildRow(cityList[index], index);
       },
     );
+  }
+
+  Set returnSaved(){
+    return _saved;
   }
 }

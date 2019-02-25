@@ -2,7 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
-import 'package:flutter_lake/FlutterWord/wordWidget.dart';
+import 'package:flutter_lake/FlutterWord/widget/wordWidget.dart';
 
 class Word extends StatelessWidget {
   @override
@@ -150,6 +150,24 @@ class RandomWordState extends State<RandomWords>{
     );
   }
 
+  void _pushSearth(){
+    Navigator.of(context).push(
+      new MaterialPageRoute(
+          builder: (context){
+            return new Scaffold(
+              appBar: new AppBar(
+                title: new Text('搜索'),
+                elevation: 0.0 ,
+              ),
+              body: new Center(
+                  child: new Text('Hello World'),
+              ),
+            );
+          }
+      )
+    );
+  }
+
 
   //该方法通过将生成单词对的代码从MyApp移动到RandomWordsState来生成单词对。
   @override
@@ -159,6 +177,10 @@ class RandomWordState extends State<RandomWords>{
       appBar: new AppBar(
         title: new Text('Start Word Generator'),
         actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.search),
+              onPressed: _pushSearth
+          ),
           new IconButton(
               icon: new Icon(Icons.list),
               onPressed: _pushSaved

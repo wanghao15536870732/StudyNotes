@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_lake/CircleFloatingMenu/circle_floating_menu.dart';
-import 'package:flutter_lake/CircleFloatingMenu/floating_button.dart';
+import 'package:flutter_lake/CircleFloatingMenu/menu/circle_floating_menu.dart';
+import 'package:flutter_lake/CircleFloatingMenu/menu/floating_button.dart';
 import 'package:oktoast/oktoast.dart';
 
 class FloatingMenuPage extends StatelessWidget{
