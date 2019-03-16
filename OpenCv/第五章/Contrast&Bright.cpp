@@ -58,3 +58,4 @@ static void on_ContrastAndBright(int, void *)
 		}
 	}
 	imshow("【原始图窗口】", g_srcImage);
+}

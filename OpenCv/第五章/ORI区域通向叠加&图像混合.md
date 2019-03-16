@@ -43,7 +43,7 @@ bool ROI_AddImage()
         return false;
     }
     //【2】定义一个Mat类型并给其设定ROI区域
-    Mat imageROI = srcImage1(Rect(20, 25, logoImage.cols, logoImage.rows));
+    Mat imageROI = srcImage1(Rect(50, 25, logoImage.cols, logoImage.rows));
 
     //【3】加载掩模
     Mat mask = imread("D:\\Desktop\\cat.png", 0);
@@ -64,9 +64,7 @@ bool ROI_AddImage()
 
 ## 线性混合操作
 
-> 线性混合操作是一种典型的二元的像素操作，理论公式为：
-
-<div align="center"> <font size = 6>
+> 线性混合操作是一种典型的二元的像素操作，理论公式为：<font size = 5>
 g(x) = (1 - a)Fa(x) + aF3(x); </font></div>
 
 `意思就是通过在范围0到1之间改变alpha值，来对两幅图像（f0(x)） 和（f1(x)）产生时间上的画面叠化效果`
