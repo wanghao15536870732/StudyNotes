@@ -1,6 +1,30 @@
 import numpy as np
 from math import sqrt
 from collections import Counter
+from metrics import accuracy_score
+
+def train_test_split(X,y,test_ratio=0.2,seed=None):
+    """"将数据X和y按照text_ratio分割成X_train,X_test,y_train,y_test"""
+
+    assert X.shape[0]== y.shape[0],\
+        "the size of X must be equal to the size of y"
+    assert 0.0 <= test_ratio <= 1.0,\
+        "test_ration must be valid"
+
+    if seed:
+        np.random.seed(seed)
+    shuffled_indexes = np.random.permutation(len(X))
+
+    test_size = int(len(X) * test_ratio)
+    test_indexed = shuffled_indexes[:test_size]
+    train_indexes = shuffled_indexes[test_size:]
+
+    X_train = X[train_indexes]
+    y_train = y[train_indexes]
+
+    X_test = X[test_indexed]
+    y_test = y[test_indexed]
+    return X_train,y_train,X_test,y_test
 
 def kNN_classify(k,X_train,y_train,x):
 
@@ -64,6 +88,10 @@ class KNNClassifier:
         votes = Counter(topK_y)
 
         return votes.most_common(1)[0][0]
+    def score(self,X_test,y_test): # 参数为test 的值跟真值的
+        """根据"测试数据集X_test和y_test确定当前模型的准确度"""
+        y_predict = self.predit(X_test)
+        return accuracy_score(y_test,y_predict)
 
 if __name__ == '__main__':
     raw_data_X = [[3.393533211, 2.331273381],
@@ -90,6 +118,7 @@ if __name__ == '__main__':
     predict_y = kNN_classify(6,X_train,y_train,x)
     print(predict_y)
     '''
+
     knn_clf = KNNClassifier(k=6)
 
     knn_clf.fit(X_train,y_train)
