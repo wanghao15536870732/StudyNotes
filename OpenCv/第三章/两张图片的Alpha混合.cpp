@@ -43,7 +43,7 @@ int main()
     if (!g_srcImageA.data)
     {
         printf("could not find the imageA.\n");
-        return -1;
+		return -1;
     }
     if (!g_srcImageB.data)
     {
