@@ -36,11 +36,12 @@ class LinearRegression:
                 return float('inf')
 
         def dJ(theta, X_b, y):
-            res = np.empty(len(theta))
-            res[0] = np.sum(X_b.dot(theta) - y)
-            for i in range(1, len(theta)):
-                res[i] = (X_b.dot(theta) - y).dot(X_b[:, i])
-            return res * 2 / len(X_b)
+            # res = np.empty(len(theta))
+            # res[0] = np.sum(X_b.dot(theta) - y)
+            # for i in range(1, len(theta)):
+            #     res[i] = (X_b.dot(theta) - y).dot(X_b[:, i])
+            # return res * 2 / len(X_b)
+            return X_b.T.dot(X_b.dot(theta) - y) * 2 / len(X_b)
 
         def gradient_decent(X_b, y, initial_theta, eta, n_iters=1e4, epsilon=1e-8):
             theta = initial_theta
@@ -59,7 +60,6 @@ class LinearRegression:
 
         X_b = np.hstack([np.ones((len(X_train), 1)), X_train])
         initial_theta = np.ones(X_b.shape[1])
-        eta = 0.01
         self._theta = gradient_decent(X_b,y_train,initial_theta,eta,n_iters)
 
         self.interception_ = self._theta[0]

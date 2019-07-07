@@ -1,6 +1,6 @@
 # 学习随笔
 
-## C语言进阶
+## 18年Android实验室C语言考核题目
 
 + [一个输入输出的实践](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/arithmetic.md)
 + [名字首字母大写](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E9%A6%96%E5%AD%97%E6%AF%8D%E5%A4%A7%E5%86%99.c)
@@ -15,7 +15,7 @@
 + [三天打鱼七天筛网](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E4%B8%89%E5%A4%A9%E6%89%93%E9%B1%BC%E4%B8%83%E5%A4%A9%E7%AD%9B%E7%BD%91.c)
 + [八皇后问题](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E9%AB%98%E7%BA%A7/%E5%85%AB%E7%9A%87%E5%90%8E%E9%97%AE%E9%A2%98.c)
 
-## C语言大一期末项目
+## 期末项目
 
 + [2018游戏](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E6%9C%9F%E6%9C%AB%E9%A1%B9%E7%9B%AE/C%E8%AF%AD%E8%A8%80-2048%E6%B8%B8%E6%88%8F/2048%E6%B8%B8%E6%88%8F/2048.cpp)
 + [贪吃蛇游戏](https://github.com/wanghao15536870732/StudyNotes/blob/master/C/C%E8%AF%AD%E8%A8%80-%E6%9C%9F%E6%9C%AB%E9%A1%B9%E7%9B%AE/C%E8%AF%AD%E8%A8%80-%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/C%E8%AF%AD%E8%A8%80-%E8%B4%AA%E5%90%83%E8%9B%87%E6%B8%B8%E6%88%8F/%E8%B4%AA%E5%90%83%E8%9B%87.cpp)
@@ -24,6 +24,7 @@
 
 + [Vscode C++ 环境配置](https://blog.csdn.net/c_duoduo/article/details/51615381)
 + [iostream](https://github.com/wanghao15536870732/StudyNotes/blob/master/C%2B%2B/ioStream.cpp)
++ [期末复习](<https://github.com/wanghao15536870732/StudyNotes/blob/master/C%2B%2B/notes.md>)
 
 ## Git
 
