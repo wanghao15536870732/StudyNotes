@@ -54,5 +54,10 @@ public class Main {
 }
 ```
 
+最终的效果：
+
+![image.png](https://upload-images.jianshu.io/upload_images/9140378-02713ea62e85c929.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/440)
+![image.png](https://upload-images.jianshu.io/upload_images/9140378-331aa6c288cbac3c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/440)
+
 > 来源：力扣（LeetCode）</br>
 > 链接：https://leetcode-cn.com/problems/occurrences-after-bigram
