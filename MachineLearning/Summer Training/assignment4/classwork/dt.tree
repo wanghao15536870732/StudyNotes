@@ -1,0 +1,36 @@
+digraph Tree {
+node [shape=box] ;
+0 [label="X[3] <= 0.8\nentropy = 1.583\nsamples = 112\nvalue = [38, 39, 35]"] ;
+1 [label="entropy = 0.0\nsamples = 38\nvalue = [38, 0, 0]"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="X[2] <= 4.85\nentropy = 0.998\nsamples = 74\nvalue = [0, 39, 35]"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+3 [label="X[3] <= 1.7\nentropy = 0.176\nsamples = 38\nvalue = [0, 37, 1]"] ;
+2 -> 3 ;
+4 [label="entropy = 0.0\nsamples = 36\nvalue = [0, 36, 0]"] ;
+3 -> 4 ;
+5 [label="X[1] <= 3.0\nentropy = 1.0\nsamples = 2\nvalue = [0, 1, 1]"] ;
+3 -> 5 ;
+6 [label="entropy = 0.0\nsamples = 1\nvalue = [0, 0, 1]"] ;
+5 -> 6 ;
+7 [label="entropy = 0.0\nsamples = 1\nvalue = [0, 1, 0]"] ;
+5 -> 7 ;
+8 [label="X[3] <= 1.7\nentropy = 0.31\nsamples = 36\nvalue = [0, 2, 34]"] ;
+2 -> 8 ;
+9 [label="X[2] <= 4.95\nentropy = 0.918\nsamples = 6\nvalue = [0, 2, 4]"] ;
+8 -> 9 ;
+10 [label="entropy = 0.0\nsamples = 1\nvalue = [0, 1, 0]"] ;
+9 -> 10 ;
+11 [label="X[0] <= 6.05\nentropy = 0.722\nsamples = 5\nvalue = [0, 1, 4]"] ;
+9 -> 11 ;
+12 [label="X[3] <= 1.55\nentropy = 1.0\nsamples = 2\nvalue = [0, 1, 1]"] ;
+11 -> 12 ;
+13 [label="entropy = 0.0\nsamples = 1\nvalue = [0, 0, 1]"] ;
+12 -> 13 ;
+14 [label="entropy = 0.0\nsamples = 1\nvalue = [0, 1, 0]"] ;
+12 -> 14 ;
+15 [label="entropy = 0.0\nsamples = 3\nvalue = [0, 0, 3]"] ;
+11 -> 15 ;
+16 [label="entropy = 0.0\nsamples = 30\nvalue = [0, 0, 30]"] ;
+8 -> 16 ;
+}
