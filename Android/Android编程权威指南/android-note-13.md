@@ -24,14 +24,12 @@ top: 98
 + AnimatorListener：动画执行监听，在动画开始、重复、结束、取消时进行回调
 总的来说，属性动画就是，动画的执行类来设置动画操作的对象的属性、持续时间，开始和结束的属性值，时间差值等，然后系统会根据设置的参数动态的变化对象的属性
 
-
-
 #### 深入学习：其他动画 API
 [Android属性动画](http://bbs.itheima.com/thread-172632-1-1.html)(出处: 黑马程序员IT技术论坛)
 
 [Hongyang](https://blog.csdn.net/lmj623565791) 的两篇[对属性动画完全解析](http://blog.csdn.net/lmj623565791/article/details/38067475)
 
-a ndroid 4.4引入了[新的视图转场框架](https://www.jianshu.com/p/98f2ec280945)
+android 4.4引入了[新的视图转场框架](https://www.jianshu.com/p/98f2ec280945)
 
 #### 挑战练习
 + ##### 日落可逆 (点击屏幕，等太阳落下后，再次点击屏幕，让太阳升起来)
